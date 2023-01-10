@@ -1,0 +1,159 @@
+What is Emmet?
+
+Emmet is a bunch of different shortcuts and snippets for you to add a small amount of code 
+and it will generate bunch of code for you by just typing a small amount of information.
+It is really powerful in creating complex html.
+
+If you go by their site the definition is
+
+“Emmet is a plug in for many popular text editors which greatly improves HTML & CSS workflow:”
+
+You can use short expressions to generate HTML markup, CSS.
+Let’s get started:
+Tip: While typing the Emmet Abbreviations, you can press Ctrl + Space see what will be generated(Inside a pop up)
+
+The general way to write Emmet abbreviation is:
+
+tagName[series of expressions]
+
+Where tagName: is the HTML tag you want to generate
+
+Series of expressions will govern the markup that will be generated.
+
+Generating HTML Skeleton
+The first thing you would do when creating a HTML page is create the skeleton for it, that is type DOCTYPE, html,head, body tags.
+
+What it you could do all that with just 2 keys? Yeah Emmet let’s you do that.
+
+Just type ‘!` in the editor, it will show a pop up with the content that will be generated, press enter and there you have your HTML skeleton . Cool isn’t is?
+
+2. Elements with text content inside them
+
+If you want to generate a div with text content inside them
+
+div{This is a div}
+Will generate a div tag with whatever text that is specified inside the curly braces ({})
+
+<div>This is a div</div>
+
+3. Nested elements
+
+To generate nested we will use ‘>’ operator
+
+ul>li
+
+<ul>
+<li></li>
+</ul>
+
+Let’s make things a bit interesting,
+
+Generate a list 3 li’s , each li has an anchor(a) tag:
+
+For nesting we can use ‘>’ operator. But how would we go about for repetition ? Repetition can be done using * operator li*3 will give three li’s just like normal multiplication.
+ul>li*3>a
+<ul>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+    </ul>
+
+    If you wanted numbers inside your li’s you could use $ operatorIf you wanted numbers inside your li’s you could use $ operatorIf you wanted numbers inside your li’s you could use $ operatorIf you wanted numbers inside your li’s you could use $ operator
+
+ul>li{$}*3
+<ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    You can also use $ multiple times so the number is padded with 0. You can set base number with ‘@N’ and direction with ‘@-’
+    ul>li{$@-}*5
+
+    <ul>
+    <li>5</li>
+    <li>4</li>
+    <li>3</li>
+    <li>2</li>
+    <li>1</li>
+</ul>
+ul>li{$@10}*5
+<ul>
+    <li>10</li>
+    <li>11</li>
+    <li>12</li>
+    <li>13</li>
+    <li>14</li>
+</ul>
+You can even use them together
+ul>li{$@-10}*5
+
+4. What about classes and Id
+
+div#main.container.responsive
+you can specify Id by using ‘#’ and classes by using ‘.’
+ <div id="main" class="container responsive"></div>
+
+ You can specify multiple classes but do remember that you can have only one id. If you specify two id’s using #, the 2nd id will override the first.
+
+So:
+div#main#main-body.container.responsive
+
+will be expanded to
+<div id="main-body" class="container responsive"></div>
+
+5. Custom attributes
+
+If you want a div with custom data property you would do the following:
+
+div[data-name=logo]
+<div data-name="logo"></div>
+6. Generating Siblings.
+
+Let’s say you want to have a header tag, div tag, footer tag. What would you do?
+
+These are not nested so you cant use ‘>’
+
+To generate sibling use ‘+’ operator
+header+div+footer
+<header></header>
+<div></div>
+<footer></footer>
+
+7. Grouping
+
+You can use ‘()’ operator to group complex abbreviations.
+
+div>(a>p>span+span)*3
+This will expand to
+
+<div>
+    <a href="">
+        <p><span></span><span></span></p>
+    </a>
+    <a href="">
+        <p><span></span><span></span></p>
+    </a>
+    <a href="">
+        <p><span></span><span></span></p>
+    </a>
+</div>
+CSS
+You can also use Emmet for CSS. This can be very helpful as you don’t have to remember long property names, use short expressions to assign values to properties. Let’s look at some examples.
+
+Margin of 10 on all sides
+
+Just type :
+
+m10–10–10–10
+This will be expanded to:
+
+margin: 10px 10px 10px 10px;
+same thing can be done for padding :
+
+p10–10–10–10
+which will be expanded to:
+
+padding: 10px 10px 10px 10px;
+
+https://docs.emmet.io/cheat-sheet/

@@ -1,0 +1,47 @@
+What is async and defer?
+async and defer are boolean attributes which are used along with 
+the script tags to load the external scripts efficiently into our webpage
+
+
+When you load  a web page, there are three major things happening in a browser
+one is the html parsing and
+one is the loading of scripts. 
+Loading of scripts involves two paths 
+one is the fetching the script from the network and 
+actually executing the script line by line
+Using the async, defer and normal script tag?
+
+<script src="" />
+Suppose your browser is loading a webpage. In the normal scenario, suppose your browser is parsing the html line by line and suddenly encounters the script tag at this point 
+so what happens is browser pause or stops the parsing at that point of time  and then sees the script tag and fetches the script from the network and gets into the browser and 
+runs it there and then. After the script is fetched from the network and executed on the browser the html parsing is paused. The html parsing will only continue to start after
+the script is fully executed. That means while we are loading the script like fetching from the website and executing the script line by line  the  browser html parsing is paused 
+in which while the html parsing is not going on so the browser is actually the javascript are blocking the rendering of the html so that is not the good case.
+
+In normal html parsing, goes on as soon as the script tag is encountered the script are fetched from the network and there and then they are executed after that html parsing continues
+
+<script async src="" />     
+So let see what happens if we use the async attribute in script tag and so while using a async attribute meanwhile the html parsing is going on. Any of the script with async tag are 
+fetched from the network asynchronously along with the html parsing. While the html parsing is going on the script are fetched from the network asynchronously so as soon as the script are 
+fetched and are available in the browser the html parsing stops and the scripts are executed then and there  and once the scripts is executed then the html parsing continues like regular.   
+
+In async tag the html parsing goes on and the script are fetched asyn matter and parallel as soon as the script are available the script is executed after only html parsing continues.
+
+
+<script defer src="" />  
+lets see what happens in defer attribute so in case of defer attribute the html parsing continues to goes on and the script tag fetched parallel so while the html parsing is going on the script 
+are fetched from the network and the html parsing continues to goes on and these scripts are only executed once the html parsing is complete so it does not matter when the script are available
+in our browser unlike async tag so it will only start the execution once the html parsing is complete
+
+In case of defer tag the html parsing goes on and the script tag are fetched parallel and only executed once the html parsing is complete
+
+
+Important : The async attribute does not guarantee the order of execution of scripts but defer does.
+EX- 1
+if you are adding async attributes in multiple scripts so suppose you have multiple scripts which are dependent on each other like some script are dependent on other you have multiple dependent
+scripts does not guarantee that these scripts will be executed in a particular order that may break your code in that case you should probably use defer.
+
+EX-2 
+Suppose you have to load external scripts lets take a example of google analytics scripts or other analytics scripts which are quite modular or independent of normal code so in that case it make sense 
+to use a async attribute and not use a defer otherwise it is mostly wise to use a defer attribute because defer attribute maintains the order of execution of scripts and it is kind best of both words while 
+your html parsing is going on the scripts are fetched from the network and are only executed when the html parsing is completed
