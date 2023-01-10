@@ -1,3 +1,5 @@
+// import React from "react";
+
 const headings = React.createElement(
   "h1",
   {
