@@ -2932,7 +2932,7 @@ const HeaderComponentSingle = ()=>{
     }, undefined);
 };
 _c = HeaderComponentSingle;
-const HeaderComponentMultiple = ()=>{
+const HeaderComponentMultiple = function() {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
@@ -2941,7 +2941,7 @@ const HeaderComponentMultiple = ()=>{
                 fileName: "App.js",
                 lineNumber: 10,
                 columnNumber: 7
-            }, undefined),
+            }, this),
             " ",
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 children: "Namaste JS"
@@ -2949,13 +2949,13 @@ const HeaderComponentMultiple = ()=>{
                 fileName: "App.js",
                 lineNumber: 10,
                 columnNumber: 30
-            }, undefined)
+            }, this)
         ]
     }, void 0, true, {
         fileName: "App.js",
         lineNumber: 9,
         columnNumber: 10
-    }, undefined);
+    }, this);
 };
 _c1 = HeaderComponentMultiple;
 const HeaderComponent2 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {

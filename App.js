@@ -6,7 +6,7 @@ const heading2 = <h1>Namaste React</h1>;
 const HeaderComponentSingle = () => {
   return  <div> <h1>Namaste React</h1></div>
 };
-const HeaderComponentMultiple = () => {
+const HeaderComponentMultiple = function() {
   return (
     <div>
       <h1>Namaste React</h1> <h2>Namaste JS</h2>
