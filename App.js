@@ -15,10 +15,11 @@ const HeaderComponentSingle = () => {
   );
 };
 //use react element inside the react component
+//both are same    <Title /> {Title()}
 const HeaderComponentMultiple = function () {
   return (
     <div>
-      <Title />
+      <Title /> {Title()}
         <h1>Namaste React functional component</h1>
         <h2>Namaste JS</h2>
     </div>
