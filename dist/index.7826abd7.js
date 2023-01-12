@@ -2905,14 +2905,15 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
-const heading = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-    id: "title",
-    children: "Namaste React Element"
-}, "title", false, {
-    fileName: "App.js",
-    lineNumber: 3,
-    columnNumber: 17
-}, undefined);
+const Title = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        id: "title",
+        children: "Namaste React Element"
+    }, "title", false, {
+        fileName: "App.js",
+        lineNumber: 3,
+        columnNumber: 21
+    }, undefined);
+_c = Title;
 //both exactly same we can skip return but for multiple lines we need paranthesis but for single line we dont need paranthesis
 const HeaderComponentSingle = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -2929,25 +2930,29 @@ const HeaderComponentSingle = ()=>{
         columnNumber: 10
     }, undefined);
 };
-_c = HeaderComponentSingle;
+_c1 = HeaderComponentSingle;
 //use react element inside the react component
 const HeaderComponentMultiple = function() {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
-            heading,
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 15,
+                columnNumber: 7
+            }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: "Namaste React functional component"
             }, void 0, false, {
                 fileName: "App.js",
                 lineNumber: 16,
-                columnNumber: 7
+                columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 children: "Namaste JS"
             }, void 0, false, {
                 fileName: "App.js",
                 lineNumber: 17,
-                columnNumber: 8
+                columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
@@ -2956,7 +2961,7 @@ const HeaderComponentMultiple = function() {
         columnNumber: 10
     }, this);
 };
-_c1 = HeaderComponentMultiple;
+_c2 = HeaderComponentMultiple;
 const HeaderComponent2 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
@@ -2980,21 +2985,22 @@ const HeaderComponent2 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         lineNumber: 20,
         columnNumber: 32
     }, undefined);
-_c2 = HeaderComponent2;
+_c3 = HeaderComponent2;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 // passing a react Element inside the root
 //ASYNC DEFER
-root.render(heading);
+root.render(Title);
 //rendering a component
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeaderComponentMultiple, {}, void 0, false, {
     fileName: "App.js",
     lineNumber: 28,
     columnNumber: 13
 }, undefined));
-var _c, _c1, _c2;
-$RefreshReg$(_c, "HeaderComponentSingle");
-$RefreshReg$(_c1, "HeaderComponentMultiple");
-$RefreshReg$(_c2, "HeaderComponent2");
+var _c, _c1, _c2, _c3;
+$RefreshReg$(_c, "Title");
+$RefreshReg$(_c1, "HeaderComponentSingle");
+$RefreshReg$(_c2, "HeaderComponentMultiple");
+$RefreshReg$(_c3, "HeaderComponent2");
 
   $parcel$ReactRefreshHelpers$c1db.postlude(module);
 } finally {
