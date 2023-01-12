@@ -2905,55 +2905,54 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
-const heading2 = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-    children: "Namaste React"
-}, void 0, false, {
+const heading = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+    id: "title",
+    children: "Namaste React Element"
+}, "title", false, {
     fileName: "App.js",
     lineNumber: 3,
-    columnNumber: 18
+    columnNumber: 17
 }, undefined);
 //both exactly same we can skip return but for multiple lines we need paranthesis but for single line we dont need paranthesis
 const HeaderComponentSingle = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            " ",
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Namaste React"
-            }, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 6,
-                columnNumber: 16
-            }, undefined)
-        ]
-    }, void 0, true, {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+            children: "Namaste React"
+        }, void 0, false, {
+            fileName: "App.js",
+            lineNumber: 9,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
         fileName: "App.js",
-        lineNumber: 6,
+        lineNumber: 8,
         columnNumber: 10
     }, undefined);
 };
 _c = HeaderComponentSingle;
+//use react element inside the react component
 const HeaderComponentMultiple = function() {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
+            heading,
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Namaste React"
+                children: "Namaste React functional component"
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 10,
+                lineNumber: 16,
                 columnNumber: 7
             }, this),
-            " ",
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 children: "Namaste JS"
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 10,
-                columnNumber: 30
+                lineNumber: 17,
+                columnNumber: 8
             }, this)
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 9,
+        lineNumber: 14,
         columnNumber: 10
     }, this);
 };
@@ -2964,29 +2963,34 @@ const HeaderComponent2 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: "Namaste React"
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 14,
-                columnNumber: 7
+                lineNumber: 21,
+                columnNumber: 5
             }, undefined),
             " ",
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 children: "Namaste JS"
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 14,
-                columnNumber: 30
+                lineNumber: 21,
+                columnNumber: 28
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 13,
+        lineNumber: 20,
         columnNumber: 32
     }, undefined);
 _c2 = HeaderComponent2;
-const roots = (0, _clientDefault.default).createRoot(document.getElementById("root"));
+const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 // passing a react Element inside the root
-//  roots.render(headings);
 //ASYNC DEFER
-roots.render(heading2);
+root.render(heading);
+//rendering a component
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeaderComponentMultiple, {}, void 0, false, {
+    fileName: "App.js",
+    lineNumber: 28,
+    columnNumber: 13
+}, undefined));
 var _c, _c1, _c2;
 $RefreshReg$(_c, "HeaderComponentSingle");
 $RefreshReg$(_c1, "HeaderComponentMultiple");
