@@ -15,7 +15,8 @@ const HeaderComponentSingle = () => {
   );
 };
 //use react element inside the react component
-//both are same    <Title /> {Title()}
+//both are same    <Title /> {Title()} called as function as well 
+//Composing Components- Passing components inside components
 const HeaderComponentMultiple = function () {
   return (
     <div>

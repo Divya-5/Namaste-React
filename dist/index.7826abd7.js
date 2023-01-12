@@ -2932,13 +2932,14 @@ const HeaderComponentSingle = ()=>{
 };
 _c1 = HeaderComponentSingle;
 //use react element inside the react component
-//both are same    <Title /> {Title()}
+//both are same    <Title /> {Title()} called as function as well 
+//Composing Components- Passing components inside components
 const HeaderComponentMultiple = function() {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 16,
+                lineNumber: 17,
                 columnNumber: 7
             }, this),
             " ",
@@ -2947,20 +2948,20 @@ const HeaderComponentMultiple = function() {
                 children: "Namaste React functional component"
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 17,
+                lineNumber: 18,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 children: "Namaste JS"
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 18,
+                lineNumber: 19,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 15,
+        lineNumber: 16,
         columnNumber: 10
     }, this);
 };
@@ -2971,7 +2972,7 @@ const HeaderComponent2 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: "Namaste React"
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 22,
+                lineNumber: 23,
                 columnNumber: 5
             }, undefined),
             " ",
@@ -2979,13 +2980,13 @@ const HeaderComponent2 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: "Namaste JS"
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 22,
+                lineNumber: 23,
                 columnNumber: 28
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 21,
+        lineNumber: 22,
         columnNumber: 32
     }, undefined);
 _c3 = HeaderComponent2;
@@ -2996,7 +2997,7 @@ root.render(Title);
 //rendering a component
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeaderComponentMultiple, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 29,
+    lineNumber: 30,
     columnNumber: 13
 }, undefined));
 var _c, _c1, _c2, _c3;
