@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 
 const Title = () => (
   <h1 id="title" key="title">
-    Namaste React Element
+  Food Villa
   </h1>
   );
 //both exactly same we can skip return but for multiple lines we need paranthesis but for single line we dont need paranthesis
@@ -20,7 +20,9 @@ const HeaderComponentSingle = () => {
 const HeaderComponentMultiple = function () {
   return (
     <div>
-      <Title /> {Title()}
+      <Title /> 
+      {Title()} 
+      <Title></Title>
         <h1>Namaste React functional component</h1>
         <h2>Namaste JS</h2>
     </div>

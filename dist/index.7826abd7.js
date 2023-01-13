@@ -2907,7 +2907,7 @@ var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
 const Title = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
         id: "title",
-        children: "Namaste React Element"
+        children: "Food Villa"
     }, "title", false, {
         fileName: "App.js",
         lineNumber: 3,
@@ -2942,20 +2942,24 @@ const HeaderComponentMultiple = function() {
                 lineNumber: 17,
                 columnNumber: 7
             }, this),
-            " ",
             Title(),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 19,
+                columnNumber: 7
+            }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: "Namaste React functional component"
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 18,
+                lineNumber: 20,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 children: "Namaste JS"
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 19,
+                lineNumber: 21,
                 columnNumber: 9
             }, this)
         ]
@@ -2972,7 +2976,7 @@ const HeaderComponent2 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: "Namaste React"
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 23,
+                lineNumber: 25,
                 columnNumber: 5
             }, undefined),
             " ",
@@ -2980,13 +2984,13 @@ const HeaderComponent2 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: "Namaste JS"
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 23,
+                lineNumber: 25,
                 columnNumber: 28
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 22,
+        lineNumber: 24,
         columnNumber: 32
     }, undefined);
 _c3 = HeaderComponent2;
@@ -2997,7 +3001,7 @@ root.render(Title);
 //rendering a component
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeaderComponentMultiple, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 30,
+    lineNumber: 32,
     columnNumber: 13
 }, undefined));
 var _c, _c1, _c2, _c3;
