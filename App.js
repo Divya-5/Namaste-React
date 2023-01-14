@@ -1,42 +1,67 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
+/*
+    Header
+     - Logo
+     - NavItem(Right Side)
+     - Cart
+    Body
+      - Search Bar
+      - Restaurant List
+        - Restaurant Card
+          -Image
+          -Name
+          -Rating
+          -Cusinies
+    Footer
+      - Links
+      - CopyRight
+     */
 const Title = () => (
-  <h1 id="title" key="title">
-  Food Villa
-  </h1>
-  );
-//both exactly same we can skip return but for multiple lines we need paranthesis but for single line we dont need paranthesis
-const HeaderComponentSingle = () => {
-  return (
-    <div>
-      <h1>Namaste React</h1>
+  <a href="/">
+    <img alt="logo" className="logo" src="https://yt3.googleusercontent.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj" />
+  </a>
+);
+const styleObj={
+  backgroundColor:"red"
+}
+//INLINE STYLE IN REACT - style={styleObj} or style={{ backgroundColor:"red"}}
+const Header = () => (
+  <div className="header" style={styleObj}>
+    <Title />
+    <div className="nav-items" style={{ backgroundColor:"red"}}>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+        <li>Cart</li>
+      </ul>
     </div>
-  );
-};
-//use react element inside the react component
-//both are same    <Title /> {Title()} called as function as well 
-//Composing Components- Passing components inside components
-const HeaderComponentMultiple = function () {
-  return (
-    <div>
-      <Title /> 
-      {Title()} 
-      <Title></Title>
-        <h1>Namaste React functional component</h1>
-        <h2>Namaste JS</h2>
-    </div>
-  );
-};
-const HeaderComponent2 = () => (
-  <div>
-    <h1>Namaste React</h1> <h2>Namaste JS</h2>
   </div>
 );
-
+const Body = () => {
+  return (
+    <h4>Body</h4>
+  );
+}
+const Footer = () => {
+  return (
+    <h4>Footer</h4>
+  );
+}
+//Either use   <> or <React.Fragment>
+const AppLayout = () => {
+  return (
+    <>
+    <Header />
+    <Body />
+    <Footer />
+    </>
+  );
+}
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // passing a react Element inside the root
 //ASYNC DEFER
 root.render(Title);
 //rendering a component
-root.render(<HeaderComponentMultiple />);
+root.render(<Header />);

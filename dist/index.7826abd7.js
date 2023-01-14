@@ -2905,110 +2905,164 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
-const Title = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        id: "title",
-        children: "Food Villa"
-    }, "title", false, {
-        fileName: "App.js",
-        lineNumber: 3,
-        columnNumber: 21
-    }, undefined);
-_c = Title;
-//both exactly same we can skip return but for multiple lines we need paranthesis but for single line we dont need paranthesis
-const HeaderComponentSingle = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-            children: "Namaste React"
+/*
+    Header
+     - Logo
+     - NavItem(Right Side)
+     - Cart
+    Body
+      - Search Bar
+      - Restaurant List
+        - Restaurant Card
+          -Image
+          -Name
+          -Rating
+          -Cusinies
+    Footer
+      - Links
+      - CopyRight
+     */ const Title = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+        href: "/",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+            alt: "logo",
+            className: "logo",
+            src: "https://yt3.googleusercontent.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"
         }, void 0, false, {
             fileName: "App.js",
-            lineNumber: 9,
-            columnNumber: 7
+            lineNumber: 21,
+            columnNumber: 5
         }, undefined)
     }, void 0, false, {
         fileName: "App.js",
-        lineNumber: 8,
-        columnNumber: 10
+        lineNumber: 20,
+        columnNumber: 21
     }, undefined);
+_c = Title;
+const styleObj = {
+    backgroundColor: "red"
 };
-_c1 = HeaderComponentSingle;
-//use react element inside the react component
-//both are same    <Title /> {Title()} called as function as well 
-//Composing Components- Passing components inside components
-const HeaderComponentMultiple = function() {
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+//INLINE STYLE IN REACT - style={styleObj} or style={{ backgroundColor:"red"}}
+const Header = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "header",
+        style: styleObj,
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 17,
-                columnNumber: 7
-            }, this),
-            Title(),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 19,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Namaste React functional component"
-            }, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 20,
-                columnNumber: 9
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: "Namaste JS"
-            }, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 21,
-                columnNumber: 9
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "App.js",
-        lineNumber: 16,
-        columnNumber: 10
-    }, this);
-};
-_c2 = HeaderComponentMultiple;
-const HeaderComponent2 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Namaste React"
-            }, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 25,
+                lineNumber: 28,
                 columnNumber: 5
             }, undefined),
-            " ",
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: "Namaste JS"
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "nav-items",
+                style: {
+                    backgroundColor: "red"
+                },
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Home"
+                        }, void 0, false, {
+                            fileName: "App.js",
+                            lineNumber: 33,
+                            columnNumber: 9
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "About"
+                        }, void 0, false, {
+                            fileName: "App.js",
+                            lineNumber: 34,
+                            columnNumber: 9
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Contact"
+                        }, void 0, false, {
+                            fileName: "App.js",
+                            lineNumber: 35,
+                            columnNumber: 9
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Cart"
+                        }, void 0, false, {
+                            fileName: "App.js",
+                            lineNumber: 36,
+                            columnNumber: 9
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "App.js",
+                    lineNumber: 32,
+                    columnNumber: 7
+                }, undefined)
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 25,
-                columnNumber: 28
+                lineNumber: 29,
+                columnNumber: 5
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 24,
-        columnNumber: 32
+        lineNumber: 27,
+        columnNumber: 22
     }, undefined);
-_c3 = HeaderComponent2;
+_c1 = Header;
+const Body = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+        children: "Body"
+    }, void 0, false, {
+        fileName: "App.js",
+        lineNumber: 41,
+        columnNumber: 10
+    }, undefined);
+};
+_c2 = Body;
+const Footer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+        children: "Footer"
+    }, void 0, false, {
+        fileName: "App.js",
+        lineNumber: 44,
+        columnNumber: 10
+    }, undefined);
+};
+_c3 = Footer;
+//Either use   <> or <React.Fragment>
+const AppLayout = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Header, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 49,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Body, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 50,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Footer, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 51,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true);
+};
+_c4 = AppLayout;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 // passing a react Element inside the root
 //ASYNC DEFER
 root.render(Title);
 //rendering a component
-root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeaderComponentMultiple, {}, void 0, false, {
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Header, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 32,
+    lineNumber: 59,
     columnNumber: 13
 }, undefined));
-var _c, _c1, _c2, _c3;
+var _c, _c1, _c2, _c3, _c4;
 $RefreshReg$(_c, "Title");
-$RefreshReg$(_c1, "HeaderComponentSingle");
-$RefreshReg$(_c2, "HeaderComponentMultiple");
-$RefreshReg$(_c3, "HeaderComponent2");
+$RefreshReg$(_c1, "Header");
+$RefreshReg$(_c2, "Body");
+$RefreshReg$(_c3, "Footer");
+$RefreshReg$(_c4, "AppLayout");
 
   $parcel$ReactRefreshHelpers$c1db.postlude(module);
 } finally {
