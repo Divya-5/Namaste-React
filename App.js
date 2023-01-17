@@ -2170,6 +2170,7 @@ const RestaurantCard = ({ name, cuisines, avgRating, cloudinaryImageId }) => {
 //cuisines = {restaurantList[0].data.cuisines}
 //instead of using imndividual props you use 
 //{...restaurantList[0].data}
+// no key <<< index key(ok way) << unique key (best practice)
 const Body = () => {
   return (
     <>
@@ -2177,7 +2178,7 @@ const Body = () => {
       <div className="restaurant-list">
         {
           restaurantList.map((restaurant) =>{
-            return <RestaurantCard {...restaurant.data} />
+            return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
           })
         }
        

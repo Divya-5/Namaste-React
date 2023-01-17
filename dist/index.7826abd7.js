@@ -4953,22 +4953,26 @@ _c2 = RestaurantCard;
 //cuisines = {restaurantList[0].data.cuisines}
 //instead of using imndividual props you use 
 //{...restaurantList[0].data}
+// no key <<< index key(ok way) << unique key (best practice)
 const Body = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "restaurant-list",
             children: restaurantList.map((restaurant)=>{
-                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {
-                    ...restaurant.data
-                }, void 0, false, {
-                    fileName: "App.js",
-                    lineNumber: 1758,
-                    columnNumber: 16
-                }, undefined);
+                return /*#__PURE__*/ (0, _react.createElement)(RestaurantCard, {
+                    ...restaurant.data,
+                    key: restaurant.data.id,
+                    __source: {
+                        fileName: "App.js",
+                        lineNumber: 1759,
+                        columnNumber: 16
+                    },
+                    __self: undefined
+                });
             })
         }, void 0, false, {
             fileName: "App.js",
-            lineNumber: 1756,
+            lineNumber: 1757,
             columnNumber: 7
         }, undefined)
     }, void 0, false);
@@ -4979,7 +4983,7 @@ const Footer = ()=>{
         children: "Footer"
     }, void 0, false, {
         fileName: "App.js",
-        lineNumber: 1780,
+        lineNumber: 1781,
         columnNumber: 10
     }, undefined);
 };
@@ -4990,17 +4994,17 @@ const AppLayout = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Header, {}, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 1785,
+                lineNumber: 1786,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Body, {}, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 1786,
+                lineNumber: 1787,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Footer, {}, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 1787,
+                lineNumber: 1788,
                 columnNumber: 7
             }, undefined)
         ]
@@ -5014,7 +5018,7 @@ root.render(Title);
 //rendering a component
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 1795,
+    lineNumber: 1796,
     columnNumber: 13
 }, undefined));
 var _c, _c1, _c2, _c3, _c4, _c5;
