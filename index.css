@@ -15,3 +15,19 @@ list-style-type: none;
 .nav-items > ul >li{
 padding: 10px;
 }
+.card {
+   width: 300px;
+      border: 1px solid black;
+   padding: 10px;
+   margin: 10px;
+}
+.card >img{
+   width: 100%;
+}
+.restaurant-list{
+   display: flex;
+   flex-wrap: wrap;
+}
+.card > h3{
+   word-break: break-word;
+}
