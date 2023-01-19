@@ -1,5 +1,5 @@
 //2ways to export
-export const Title = () => (
+const Title = () => (
     <a href="/">
         <img
             alt="logo"
