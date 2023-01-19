@@ -27408,8 +27408,14 @@ var _react = require("react");
 var _constants = require("../constants");
 var _restaurantCard = require("./RestaurantCard");
 var _restaurantCardDefault = parcelHelpers.interopDefault(_restaurantCard);
+var _s = $RefreshSig$();
 const Body = ()=>{
-    let searchText = "KFC";
+    _s();
+    //USESTATE HOOK
+    //searchTxt is a local state variable
+    //destructing
+    const [searchInput, setsearchInput] = (0, _react.useState)("KFC"); //returns [variable name, function to update the state variable]
+    const [searchClick, setsearchClick] = (0, _react.useState)("false");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27419,27 +27425,38 @@ const Body = ()=>{
                         type: "text",
                         className: "search-input",
                         placeholder: "Search",
-                        value: searchText,
+                        value: searchInput,
                         onChange: (e)=>{
-                            searchText = e.target.value; // this will not work 
+                            setsearchInput(e.target.value); // this will not work
                         }
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 7,
+                        lineNumber: 12,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        children: searchClick
+                    }, void 0, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 15,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         className: "search-btn",
+                        onClick: ()=>{
+                            if (searchClick === "true") setsearchClick("false");
+                            else setsearchClick("true");
+                        },
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 10,
+                        lineNumber: 16,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 6,
+                lineNumber: 11,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27450,7 +27467,7 @@ const Body = ()=>{
                         key: restaurant.data.id,
                         __source: {
                             fileName: "src/components/Body.js",
-                            lineNumber: 14,
+                            lineNumber: 28,
                             columnNumber: 16
                         },
                         __self: undefined
@@ -27458,12 +27475,13 @@ const Body = ()=>{
                 })
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 12,
+                lineNumber: 26,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true);
 };
+_s(Body, "JeKm9wNzTiI9H766H5kPRlHeZ3Q=");
 _c = Body;
 exports.default = Body;
 var _c;
