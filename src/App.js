@@ -1,5 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+// import * as XYZ from "./components/Header";
+import { Title } from "./components/Header";
+import Header from "./components/Header";
 /*
     Header
      - Logo
@@ -17,32 +20,8 @@ import ReactDOM from "react-dom/client";
       - Links
       - CopyRight
      */
-const Title = () => (
-  <a href="/">
-    <img
-      alt="logo"
-      className="logo"
-      src="https://yt3.googleusercontent.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"
-    />
-  </a>
-);
-const styleObj = {
-  backgroundColor: "red",
-};
-//INLINE STYLE IN REACT - style={styleObj} or style={{ backgroundColor:"red"}}
-const Header = () => (
-  <div className="header" style={styleObj}>
-    <Title />
-    <div className="nav-items" style={{ backgroundColor: "red" }}>
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Cart</li>
-      </ul>
-    </div>
-  </div>
-);
+
+
 //Config Driven UI
 // const config = [
 //   {
@@ -2174,14 +2153,14 @@ const RestaurantCard = ({ name, cuisines, avgRating, cloudinaryImageId }) => {
 const Body = () => {
   return (
     <>
-    
+
       <div className="restaurant-list">
         {
-          restaurantList.map((restaurant) =>{
+          restaurantList.map((restaurant) => {
             return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
           })
         }
-       
+
         {/* map instead of all these */
         /* <RestaurantCard {...restaurantList[1].data} />
         <RestaurantCard {...restaurantList[2].data} />
@@ -2208,15 +2187,12 @@ const Footer = () => {
 const AppLayout = () => {
   return (
     <>
-      <Header />
+      {/* <XYZ.Header /> */}
+      <Header/>
       <Body />
       <Footer />
     </>
   );
 };
 const root = ReactDOM.createRoot(document.getElementById("root"));
-// passing a react Element inside the root
-//ASYNC DEFER
-root.render(Title);
-//rendering a component
 root.render(<AppLayout />);
