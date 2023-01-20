@@ -27409,13 +27409,18 @@ var _constants = require("../constants");
 var _restaurantCard = require("./RestaurantCard");
 var _restaurantCardDefault = parcelHelpers.interopDefault(_restaurantCard);
 var _s = $RefreshSig$();
+function filterData(searchText, restaurants) {
+    const filterData = restaurants.filter((restaurant)=>restaurant.data.name.includes(searchText));
+    return filterData;
+}
 const Body = ()=>{
     _s();
     //USESTATE HOOK
     //searchTxt is a local state variable
     //destructing
-    const [searchInput, setsearchInput] = (0, _react.useState)("KFC"); //returns [variable name, function to update the state variable]
-    const [searchClick, setsearchClick] = (0, _react.useState)("false");
+    const [searchText, setSearchText] = (0, _react.useState)(""); //returns [variable name, function to update the state variable]
+    // const [searchClick, setSearchClick] = useState("false");
+    const [restaurants, setRestaurants] = (0, _react.useState)((0, _constants.restaurantList));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27425,49 +27430,44 @@ const Body = ()=>{
                         type: "text",
                         className: "search-input",
                         placeholder: "Search",
-                        value: searchInput,
+                        value: searchText,
                         onChange: (e)=>{
-                            setsearchInput(e.target.value); // this will not work
+                            setSearchText(e.target.value); // this will not work
                         }
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 12,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                        children: searchClick
-                    }, void 0, false, {
-                        fileName: "src/components/Body.js",
-                        lineNumber: 15,
+                        lineNumber: 17,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         className: "search-btn",
                         onClick: ()=>{
-                            if (searchClick === "true") setsearchClick("false");
-                            else setsearchClick("true");
+                            //need to filter the data
+                            //update  the state- restaurants
+                            const data = filterData(searchText, restaurants);
+                            setRestaurants(data);
                         },
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 16,
+                        lineNumber: 20,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 11,
+                lineNumber: 16,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "restaurant-list",
-                children: (0, _constants.restaurantList).map((restaurant)=>{
+                children: restaurants.map((restaurant)=>{
                     return /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCardDefault.default), {
                         ...restaurant.data,
                         key: restaurant.data.id,
                         __source: {
                             fileName: "src/components/Body.js",
-                            lineNumber: 28,
+                            lineNumber: 31,
                             columnNumber: 16
                         },
                         __self: undefined
@@ -27475,13 +27475,13 @@ const Body = ()=>{
                 })
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 26,
+                lineNumber: 29,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(Body, "JeKm9wNzTiI9H766H5kPRlHeZ3Q=");
+_s(Body, "uj21aTnWNS4KUjQRmsuXzNGJExI=");
 _c = Body;
 exports.default = Body;
 var _c;

@@ -1,12 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { restaurantList } from "../constants";
 import RestaurantCard from "./RestaurantCard";
+
+function filterData(searchText, restaurants) {
+  const filterData = restaurants.filter((restaurant) =>
+    restaurant.data.name.includes(searchText)
+  );
+  return filterData;
+}
 const Body = () => {
   //USESTATE HOOK
   //searchTxt is a local state variable
   //destructing
-  const [searchInput, setsearchInput] = useState("KFC"); //returns [variable name, function to update the state variable]
-  const [searchClick, setsearchClick] = useState("false");
+  const [searchText, setSearchText] = useState(""); //returns [variable name, function to update the state variable]
+  // const [searchClick, setSearchClick] = useState("false");
+  const [restaurants, setRestaurants] = useState(restaurantList);
   return (
     <>
       <div className="search-container">
@@ -14,28 +22,25 @@ const Body = () => {
           type="text"
           className="search-input"
           placeholder="Search"
-          value={searchInput}
+          value={searchText}
           onChange={(e) => {
-            setsearchInput(e.target.value); // this will not work
+            setSearchText(e.target.value); // this will not work
           }}
         />
-        <h1>{searchClick}</h1>
         <button
           className="search-btn"
           onClick={() => {
-            if (searchClick==="true"){
-              setsearchClick("false");
-            }
-            else{
-            setsearchClick("true");
-            }
+            //need to filter the data
+            //update  the state- restaurants
+            const data = filterData(searchText, restaurants);
+            setRestaurants(data);
           }}
         >
           Search
         </button>
       </div>
       <div className="restaurant-list">
-        {restaurantList.map((restaurant) => {
+        {restaurants.map((restaurant) => {
           return (
             <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
           );
