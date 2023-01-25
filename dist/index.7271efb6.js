@@ -2916,22 +2916,28 @@ var _constants = require("./constants");
 var _reactRouterDom = require("react-router-dom");
 var _about = require("./components/About");
 var _aboutDefault = parcelHelpers.interopDefault(_about);
+var _error = require("./components/Error");
+var _errorDefault = parcelHelpers.interopDefault(_error);
+var _contact = require("./components/Contact");
+var _contactDefault = parcelHelpers.interopDefault(_contact);
+var _restaurantMenu = require("./components/RestaurantMenu");
+var _restaurantMenuDefault = parcelHelpers.interopDefault(_restaurantMenu);
 const AppLayout = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 13,
+                lineNumber: 16,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 14,
-                columnNumber: 7
+                lineNumber: 18,
+                columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 15,
+                lineNumber: 19,
                 columnNumber: 7
             }, undefined)
         ]
@@ -2943,17 +2949,48 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 20,
+            lineNumber: 24,
             columnNumber: 12
-        }, undefined)
-    },
-    {
-        path: "/about",
-        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
+        }, undefined),
+        errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 23,
-            columnNumber: 12
-        }, undefined)
+            lineNumber: 25,
+            columnNumber: 17
+        }, undefined),
+        children: [
+            {
+                path: "/",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 28,
+                    columnNumber: 14
+                }, undefined)
+            },
+            {
+                path: "/about",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 31,
+                    columnNumber: 14
+                }, undefined)
+            },
+            {
+                path: "/contact",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 34,
+                    columnNumber: 14
+                }, undefined)
+            },
+            {
+                path: "/restaurant/id",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantMenuDefault.default), {}, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 37,
+                    columnNumber: 14
+                }, undefined)
+            }
+        ]
     }
 ]);
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
@@ -2961,7 +2998,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: appRouter
 }, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 26,
+    lineNumber: 41,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -2972,7 +3009,7 @@ $RefreshReg$(_c, "AppLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./components/Header":"hsJbF","./components/Body":"8yaV8","./components/Footer":"8pPOA","./constants":"3huJa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","./components/About":"9R1Eu"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./components/Header":"hsJbF","./components/Body":"8yaV8","./components/Footer":"8pPOA","./constants":"3huJa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","./components/About":"9R1Eu","./components/Error":"kvula","./components/Contact":"cgAOG","./components/RestaurantMenu":"8PuJ6"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("e5895a66f0ef01");
 
@@ -27170,6 +27207,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _foodvillaJpg = require("../assets/img/foodvilla.jpg");
 var _foodvillaJpgDefault = parcelHelpers.interopDefault(_foodvillaJpg);
+var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 const loggedInUser = ()=>{
     //api to authenticate
@@ -27183,12 +27221,12 @@ const Title = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
             src: (0, _foodvillaJpgDefault.default)
         }, void 0, false, {
             fileName: "src/components/Header.js",
-            lineNumber: 8,
-            columnNumber: 9
+            lineNumber: 9,
+            columnNumber: 5
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/Header.js",
-        lineNumber: 7,
+        lineNumber: 8,
         columnNumber: 21
     }, undefined);
 _c = Title;
@@ -27200,71 +27238,92 @@ const Header = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 13,
-                columnNumber: 9
+                lineNumber: 14,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "nav-items",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
                     children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            children: "Home"
-                        }, void 0, false, {
-                            fileName: "src/components/Header.js",
-                            lineNumber: 16,
-                            columnNumber: 17
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            children: "About"
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                children: "Home"
+                            }, void 0, false, {
+                                fileName: "src/components/Header.js",
+                                lineNumber: 18,
+                                columnNumber: 11
+                            }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/Header.js",
                             lineNumber: 17,
-                            columnNumber: 17
+                            columnNumber: 19
                         }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            children: "Contact"
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/about",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                children: "About"
+                            }, void 0, false, {
+                                fileName: "src/components/Header.js",
+                                lineNumber: 21,
+                                columnNumber: 13
+                            }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/Header.js",
-                            lineNumber: 18,
-                            columnNumber: 17
+                            lineNumber: 20,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/contact",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                children: "Contact"
+                            }, void 0, false, {
+                                fileName: "src/components/Header.js",
+                                lineNumber: 24,
+                                columnNumber: 11
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/Header.js",
+                            lineNumber: 23,
+                            columnNumber: 19
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: "Cart"
                         }, void 0, false, {
                             fileName: "src/components/Header.js",
-                            lineNumber: 19,
-                            columnNumber: 17
+                            lineNumber: 26,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/Header.js",
-                    lineNumber: 15,
-                    columnNumber: 13
+                    lineNumber: 16,
+                    columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 14,
-                columnNumber: 9
+                lineNumber: 15,
+                columnNumber: 7
             }, undefined),
             isLoggedIn ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                 onClick: ()=>setIsLoggedIn(false),
                 children: "Logout"
             }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 22,
-                columnNumber: 23
+                lineNumber: 29,
+                columnNumber: 21
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                 onClick: ()=>setIsLoggedIn(true),
                 children: "Login"
             }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 22,
-                columnNumber: 86
+                lineNumber: 29,
+                columnNumber: 84
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Header.js",
-        lineNumber: 12,
+        lineNumber: 13,
         columnNumber: 10
     }, undefined);
 };
@@ -27280,7 +27339,7 @@ $RefreshReg$(_c1, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/img/foodvilla.jpg":"i8lFt","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"i8lFt":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/img/foodvilla.jpg":"i8lFt","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"i8lFt":[function(require,module,exports) {
 module.exports = require("1eaffc46289bff0").getBundleURL("aXMci") + "foodvilla.e082accf.jpg" + "?" + Date.now();
 
 },{"1eaffc46289bff0":"lgJ39"}],"lgJ39":[function(require,module,exports) {
@@ -27481,2128 +27540,7 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"7fc6c8c1a9c856ae":"786KC"}],"8yaV8":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$0606 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$0606.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _constants = require("../constants");
-var _restaurantCard = require("./RestaurantCard");
-var _restaurantCardDefault = parcelHelpers.interopDefault(_restaurantCard);
-var _shimmer = require("./Shimmer");
-var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
-var _s = $RefreshSig$();
-function filterData(searchText, restaurants) {
-    const filterData = restaurants.filter((restaurant)=>restaurant?.data?.name?.toLowerCase()?.includes(searchText?.toLowerCase()));
-    return filterData;
-}
-const Body = ()=>{
-    _s();
-    const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]);
-    const [searchText, setSearchText] = (0, _react.useState)("");
-    const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]);
-    (0, _react.useEffect)(()=>{
-        //Api call
-        getRestaurants();
-    }, []);
-    async function getRestaurants() {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.8466937&lng=80.94616599999999&page_type=DESKTOP_WEB_LISTING");
-        const json = await data.json();
-        setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-        setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    }
-    if (!allRestaurants) return null;
-    // if (filteredRestaurants?.length === 0)
-    //   return <h1>No Restaurants match your filter !!!</h1>;
-    return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
-        fileName: "src/components/Body.js",
-        lineNumber: 27,
-        columnNumber: 41
-    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "search-container",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "text",
-                        className: "search-input",
-                        placeholder: "Search",
-                        value: searchText,
-                        onChange: (e)=>{
-                            setSearchText(e.target.value);
-                        }
-                    }, void 0, false, {
-                        fileName: "src/components/Body.js",
-                        lineNumber: 29,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "search-btn",
-                        onClick: ()=>{
-                            const data = filterData(searchText, allRestaurants);
-                            setFilteredRestaurants(data);
-                        },
-                        children: "Search"
-                    }, void 0, false, {
-                        fileName: "src/components/Body.js",
-                        lineNumber: 32,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/Body.js",
-                lineNumber: 28,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "restaurant-list",
-                children: filteredRestaurants.map((restaurant)=>{
-                    return /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCardDefault.default), {
-                        ...restaurant.data,
-                        key: restaurant.data.id,
-                        __source: {
-                            fileName: "src/components/Body.js",
-                            lineNumber: 41,
-                            columnNumber: 16
-                        },
-                        __self: undefined
-                    });
-                })
-            }, void 0, false, {
-                fileName: "src/components/Body.js",
-                lineNumber: 39,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true);
-};
-_s(Body, "45P24LJzPR4GsPuueZH7z/+skgo=");
-_c = Body;
-exports.default = Body;
-var _c;
-$RefreshReg$(_c, "Body");
-
-  $parcel$ReactRefreshHelpers$0606.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../constants":"3huJa","./RestaurantCard":"bMboU","./Shimmer":"g6ZGj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3huJa":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "IMG_CDN_URL", ()=>IMG_CDN_URL);
-parcelHelpers.export(exports, "restaurantList", ()=>restaurantList);
-const IMG_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
-const restaurantList = [
-    {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "65085",
-            "name": "Mughal Zaika Aminabad",
-            "uuid": "4cb63a38-b2d1-465f-bb1d-6a51fd5237f8",
-            "city": "15",
-            "area": "Aminabad",
-            "totalRatingsString": "1000+ ratings",
-            "cloudinaryImageId": "yood4aumr1wbxed1odxk",
-            "cuisines": [
-                "Mughlai"
-            ],
-            "tags": [],
-            "costForTwo": 30000,
-            "costForTwoString": "₹300 FOR TWO",
-            "deliveryTime": 34,
-            "minDeliveryTime": 34,
-            "maxDeliveryTime": 34,
-            "slaString": "34 MINS",
-            "lastMileTravel": 3,
-            "slugs": {
-                "restaurant": "mughal-zaika-aminabad-hazratganj",
-                "city": "lucknow"
-            },
-            "cityState": "15",
-            "address": "Naaz Cinema Road, AminabadMarket, Aminabad, Lucknow",
-            "locality": "Aminabadmarket",
-            "parentId": 140984,
-            "unserviceable": false,
-            "veg": false,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "aggregatedDiscountInfo": {
-                "header": "60% off",
-                "shortDescriptionList": [
-                    {
-                        "meta": "60% off | Use TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "60% off up to ₹120 | Use code TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "aggregatedDiscountInfoV2": {
-                "header": "60% OFF",
-                "shortDescriptionList": [
-                    {
-                        "meta": "Use TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "60% off up to ₹120 | Use code TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "ribbon": [
-                {
-                    "type": "PROMOTED"
-                }
-            ],
-            "chain": [],
-            "feeDetails": {
-                "fees": [],
-                "totalFees": 0,
-                "message": "",
-                "title": "",
-                "amount": "",
-                "icon": ""
-            },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
-            },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "cid=5730638~p=1~eid=00000185-b1b1-b54e-3ba8-963500b80167",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
-            },
-            "lastMileTravelString": "3 kms",
-            "hasSurge": false,
-            "sla": {
-                "restaurantId": "65085",
-                "deliveryTime": 34,
-                "minDeliveryTime": 34,
-                "maxDeliveryTime": 34,
-                "lastMileTravel": 3,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
-            },
-            "promoted": true,
-            "avgRating": "4.1",
-            "totalRatings": 1000,
-            "new": false
-        },
-        "subtype": "basic"
-    },
-    {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "231204",
-            "name": "Burger King",
-            "uuid": "42703785-8706-4834-9459-cbfeeeff451b",
-            "city": "15",
-            "area": "Hazratganj",
-            "totalRatingsString": "1000+ ratings",
-            "cloudinaryImageId": "b1nbyfvq3wbrcpzbqpmu",
-            "cuisines": [
-                "Burgers",
-                "American"
-            ],
-            "tags": [],
-            "costForTwo": 35000,
-            "costForTwoString": "₹350 FOR TWO",
-            "deliveryTime": 32,
-            "minDeliveryTime": 32,
-            "maxDeliveryTime": 32,
-            "slaString": "32 MINS",
-            "lastMileTravel": 1,
-            "slugs": {
-                "restaurant": "burger-king-hazratganj-hazratganj",
-                "city": "lucknow"
-            },
-            "cityState": "15",
-            "address": "Burger King, Limited Ground floor Sahu Theater Building,Hazratganj Lucknow 226001",
-            "locality": "Sahu Cinemax",
-            "parentId": 166,
-            "unserviceable": false,
-            "veg": false,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "aggregatedDiscountInfo": {
-                "header": "60% off",
-                "shortDescriptionList": [
-                    {
-                        "meta": "60% off | Use STEALDEAL",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "60% off up to ₹120 | Use code STEALDEAL",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "aggregatedDiscountInfoV2": {
-                "header": "60% OFF",
-                "shortDescriptionList": [
-                    {
-                        "meta": "Use STEALDEAL",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "60% off up to ₹120 | Use code STEALDEAL",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "chain": [],
-            "feeDetails": {
-                "fees": [],
-                "totalFees": 0,
-                "message": "",
-                "title": "",
-                "amount": "",
-                "icon": ""
-            },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
-            },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
-            },
-            "lastMileTravelString": "1 kms",
-            "hasSurge": false,
-            "sla": {
-                "restaurantId": "231204",
-                "deliveryTime": 32,
-                "minDeliveryTime": 32,
-                "maxDeliveryTime": 32,
-                "lastMileTravel": 1,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
-            },
-            "promoted": false,
-            "avgRating": "4.1",
-            "totalRatings": 1000,
-            "new": false
-        },
-        "subtype": "basic"
-    },
-    {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "60240",
-            "name": "Pizza Hut",
-            "uuid": "468e0627-2bd1-494f-b0cc-f33eec698ae8",
-            "city": "15",
-            "area": "The Mall Avenue",
-            "totalRatingsString": "500+ ratings",
-            "cloudinaryImageId": "exd0x5wjdxovdwbnfqiz",
-            "cuisines": [
-                "Pizzas"
-            ],
-            "tags": [],
-            "costForTwo": 35000,
-            "costForTwoString": "₹350 FOR TWO",
-            "deliveryTime": 29,
-            "minDeliveryTime": 29,
-            "maxDeliveryTime": 29,
-            "slaString": "29 MINS",
-            "lastMileTravel": 0.800000011920929,
-            "slugs": {
-                "restaurant": "pizza-hut-governer-house-hazratganj",
-                "city": "lucknow"
-            },
-            "cityState": "15",
-            "address": "91 M.G. Marg Opp Governer House, Hazratganj, Lucknow 226001",
-            "locality": "Governer House",
-            "parentId": 721,
-            "unserviceable": false,
-            "veg": false,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "aggregatedDiscountInfo": {
-                "header": "50% off",
-                "shortDescriptionList": [
-                    {
-                        "meta": "50% off | Use TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "50% off up to ₹100 | Use code TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "aggregatedDiscountInfoV2": {
-                "header": "50% OFF",
-                "shortDescriptionList": [
-                    {
-                        "meta": "Use TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "50% off up to ₹100 | Use code TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "chain": [],
-            "feeDetails": {
-                "fees": [],
-                "totalFees": 0,
-                "message": "",
-                "title": "",
-                "amount": "",
-                "icon": ""
-            },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
-            },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
-            },
-            "lastMileTravelString": "0.8 kms",
-            "hasSurge": false,
-            "sla": {
-                "restaurantId": "60240",
-                "deliveryTime": 29,
-                "minDeliveryTime": 29,
-                "maxDeliveryTime": 29,
-                "lastMileTravel": 0.800000011920929,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
-            },
-            "promoted": false,
-            "avgRating": "3.7",
-            "totalRatings": 500,
-            "new": false
-        },
-        "subtype": "basic"
-    },
-    {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "424623",
-            "name": "The kalika Hut",
-            "uuid": "c00c99b8-da0a-4f6e-8569-fec5e14fa34b",
-            "city": "15",
-            "area": "Hazratganj",
-            "totalRatingsString": "500+ ratings",
-            "cloudinaryImageId": "qmewcacsigu7fsh7xtni",
-            "cuisines": [
-                "Desserts",
-                "North Indian"
-            ],
-            "tags": [],
-            "costForTwo": 30000,
-            "costForTwoString": "₹300 FOR TWO",
-            "deliveryTime": 26,
-            "minDeliveryTime": 26,
-            "maxDeliveryTime": 26,
-            "slaString": "26 MINS",
-            "lastMileTravel": 1.7999999523162842,
-            "slugs": {
-                "restaurant": "the-kalika-hut-hazratganj-hazratganj",
-                "city": "lucknow"
-            },
-            "cityState": "15",
-            "address": "Shop no 5 Near K D Singh Babu Stadium Hazratganj lucknow.226001",
-            "locality": "Near K D Singh",
-            "parentId": 4848,
-            "unserviceable": false,
-            "veg": false,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "aggregatedDiscountInfo": {
-                "header": "60% off",
-                "shortDescriptionList": [
-                    {
-                        "meta": "60% off | Use TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "60% off up to ₹120 | Use code TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "aggregatedDiscountInfoV2": {
-                "header": "60% OFF",
-                "shortDescriptionList": [
-                    {
-                        "meta": "Use TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "60% off up to ₹120 | Use code TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "ribbon": [
-                {
-                    "type": "PROMOTED"
-                }
-            ],
-            "chain": [],
-            "feeDetails": {
-                "fees": [],
-                "totalFees": 0,
-                "message": "",
-                "title": "",
-                "amount": "",
-                "icon": ""
-            },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
-            },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "cid=5730642~p=7~eid=00000185-b1b1-b54e-3ba8-963700b8075a",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
-            },
-            "lastMileTravelString": "1.7 kms",
-            "hasSurge": false,
-            "sla": {
-                "restaurantId": "424623",
-                "deliveryTime": 26,
-                "minDeliveryTime": 26,
-                "maxDeliveryTime": 26,
-                "lastMileTravel": 1.7999999523162842,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
-            },
-            "promoted": true,
-            "avgRating": "4.0",
-            "totalRatings": 500,
-            "new": false
-        },
-        "subtype": "basic"
-    },
-    {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "213869",
-            "name": "Pocket Bites",
-            "uuid": "0b449580-66d8-430c-95d3-eac327bcf3ce",
-            "city": "15",
-            "area": "Lucknow",
-            "totalRatingsString": "100+ ratings",
-            "cloudinaryImageId": "vmnmq2dtcvztaw7gswmi",
-            "cuisines": [
-                "Chinese",
-                "Snacks",
-                "Biryani",
-                "North Indian",
-                "Desserts",
-                "Lucknowi"
-            ],
-            "tags": [],
-            "costForTwo": 20000,
-            "costForTwoString": "₹200 FOR TWO",
-            "deliveryTime": 23,
-            "minDeliveryTime": 23,
-            "maxDeliveryTime": 23,
-            "slaString": "23 MINS",
-            "lastMileTravel": 0.10000000149011612,
-            "slugs": {
-                "restaurant": "pocket-bites-hazratganj-hazratganj",
-                "city": "lucknow"
-            },
-            "cityState": "15",
-            "address": "41/591, Seth Ramjas Road, Tarikhana, Narhi, Hazratganj, Lucknow, Uttar Pradesh, India",
-            "locality": "Hazratganj",
-            "parentId": 373820,
-            "unserviceable": false,
-            "veg": true,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "aggregatedDiscountInfo": {
-                "header": "50% off",
-                "shortDescriptionList": [
-                    {
-                        "meta": "50% off | Use WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "50% off up to ₹100 | Use code WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "aggregatedDiscountInfoV2": {
-                "header": "50% OFF",
-                "shortDescriptionList": [
-                    {
-                        "meta": "Use WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "50% off up to ₹100 | Use code WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "chain": [],
-            "feeDetails": {
-                "fees": [],
-                "totalFees": 0,
-                "message": "",
-                "title": "",
-                "amount": "",
-                "icon": ""
-            },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
-            },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
-            },
-            "lastMileTravelString": "0.1 kms",
-            "hasSurge": false,
-            "sla": {
-                "restaurantId": "213869",
-                "deliveryTime": 23,
-                "minDeliveryTime": 23,
-                "maxDeliveryTime": 23,
-                "lastMileTravel": 0.10000000149011612,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
-            },
-            "promoted": false,
-            "avgRating": "3.9",
-            "totalRatings": 100,
-            "new": false
-        },
-        "subtype": "basic"
-    },
-    {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "453646",
-            "name": "SNACKS & SHAKES",
-            "uuid": "c898d04d-7e4d-4aff-bb69-a849aedd917b",
-            "city": "15",
-            "area": "Hazratganj",
-            "totalRatingsString": "20+ ratings",
-            "cloudinaryImageId": "c3y4gwdmnbqrfhvnqjxi",
-            "cuisines": [
-                "Snacks",
-                "Chinese",
-                "Desserts"
-            ],
-            "tags": [],
-            "costForTwo": 20000,
-            "costForTwoString": "₹200 FOR TWO",
-            "deliveryTime": 36,
-            "minDeliveryTime": 36,
-            "maxDeliveryTime": 36,
-            "slaString": "36 MINS",
-            "lastMileTravel": 0.10000000149011612,
-            "slugs": {
-                "restaurant": "snacks-&-shakes-hazratganj-hazratganj",
-                "city": "lucknow"
-            },
-            "cityState": "15",
-            "address": "41/591 SETH RAM JAD ROAD LUCKNOW",
-            "locality": "Seth Ram Jad Road",
-            "parentId": 190225,
-            "unserviceable": false,
-            "veg": true,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "aggregatedDiscountInfo": {
-                "header": "50% off",
-                "shortDescriptionList": [
-                    {
-                        "meta": "50% off | Use WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "50% off up to ₹100 | Use code WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "aggregatedDiscountInfoV2": {
-                "header": "50% OFF",
-                "shortDescriptionList": [
-                    {
-                        "meta": "Use WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "50% off up to ₹100 | Use code WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "chain": [],
-            "feeDetails": {
-                "fees": [],
-                "totalFees": 0,
-                "message": "",
-                "title": "",
-                "amount": "",
-                "icon": ""
-            },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
-            },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
-            },
-            "lastMileTravelString": "0.1 kms",
-            "hasSurge": false,
-            "sla": {
-                "restaurantId": "453646",
-                "deliveryTime": 36,
-                "minDeliveryTime": 36,
-                "maxDeliveryTime": 36,
-                "lastMileTravel": 0.10000000149011612,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
-            },
-            "promoted": false,
-            "avgRating": "3.4",
-            "totalRatings": 20,
-            "new": false
-        },
-        "subtype": "basic"
-    },
-    {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "89361",
-            "name": "La Pino'z Pizza",
-            "uuid": "a23c86ec-1945-49f0-b7be-cf53e2ea052c",
-            "city": "15",
-            "area": "Hazratganj",
-            "totalRatingsString": "500+ ratings",
-            "cloudinaryImageId": "dek7ifvgfbnddngpqn4r",
-            "cuisines": [
-                "Pizzas",
-                "Italian"
-            ],
-            "tags": [],
-            "costForTwo": 25000,
-            "costForTwoString": "₹250 FOR TWO",
-            "deliveryTime": 26,
-            "minDeliveryTime": 26,
-            "maxDeliveryTime": 26,
-            "slaString": "26 MINS",
-            "lastMileTravel": 0.8999999761581421,
-            "slugs": {
-                "restaurant": "la-pinoz-pizza-hazratganj-hazratganj",
-                "city": "lucknow"
-            },
-            "cityState": "15",
-            "address": "6, Sapru Marg, Hazratganj, Lucknow",
-            "locality": "Sapru Marg",
-            "parentId": 4961,
-            "unserviceable": false,
-            "veg": false,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "aggregatedDiscountInfo": {
-                "header": "50% off",
-                "shortDescriptionList": [
-                    {
-                        "meta": "50% off | Use WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "50% off up to ₹100 | Use code WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "aggregatedDiscountInfoV2": {
-                "header": "50% OFF",
-                "shortDescriptionList": [
-                    {
-                        "meta": "Use WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "50% off up to ₹100 | Use code WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "chain": [],
-            "feeDetails": {
-                "fees": [],
-                "totalFees": 0,
-                "message": "",
-                "title": "",
-                "amount": "",
-                "icon": ""
-            },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
-            },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
-            },
-            "lastMileTravelString": "0.8 kms",
-            "hasSurge": false,
-            "sla": {
-                "restaurantId": "89361",
-                "deliveryTime": 26,
-                "minDeliveryTime": 26,
-                "maxDeliveryTime": 26,
-                "lastMileTravel": 0.8999999761581421,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
-            },
-            "promoted": false,
-            "avgRating": "4.1",
-            "totalRatings": 500,
-            "new": false
-        },
-        "subtype": "basic"
-    },
-    {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "141379",
-            "name": "Burger point",
-            "uuid": "4f8caa81-81ee-43d0-9c04-13dafefe853f",
-            "city": "15",
-            "area": "Hazratganj",
-            "totalRatingsString": "100+ ratings",
-            "cloudinaryImageId": "siez5v7u2ja3h6ab6gnw",
-            "cuisines": [
-                "Snacks",
-                "Beverages"
-            ],
-            "tags": [],
-            "costForTwo": 20000,
-            "costForTwoString": "₹200 FOR TWO",
-            "deliveryTime": 23,
-            "minDeliveryTime": 23,
-            "maxDeliveryTime": 23,
-            "slaString": "23 MINS",
-            "lastMileTravel": 0.800000011920929,
-            "slugs": {
-                "restaurant": "burger-point-nawal-kishore-road-hazratganj",
-                "city": "lucknow"
-            },
-            "cityState": "15",
-            "address": "Burger Point BM Plaza Nawal Kishore Road Hazratganj",
-            "locality": "Nawal Kishore Road",
-            "parentId": 168,
-            "unserviceable": false,
-            "veg": false,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "aggregatedDiscountInfo": {
-                "header": "50% off",
-                "shortDescriptionList": [
-                    {
-                        "meta": "50% off | Use WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "50% off up to ₹100 | Use code WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "aggregatedDiscountInfoV2": {
-                "header": "50% OFF",
-                "shortDescriptionList": [
-                    {
-                        "meta": "Use WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "50% off up to ₹100 | Use code WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "chain": [],
-            "feeDetails": {
-                "fees": [],
-                "totalFees": 0,
-                "message": "",
-                "title": "",
-                "amount": "",
-                "icon": ""
-            },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
-            },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
-            },
-            "lastMileTravelString": "0.8 kms",
-            "hasSurge": false,
-            "sla": {
-                "restaurantId": "141379",
-                "deliveryTime": 23,
-                "minDeliveryTime": 23,
-                "maxDeliveryTime": 23,
-                "lastMileTravel": 0.800000011920929,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
-            },
-            "promoted": false,
-            "avgRating": "3.9",
-            "totalRatings": 100,
-            "new": false
-        },
-        "subtype": "basic"
-    },
-    {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "82387",
-            "name": "Red Dragon (Chopstix)",
-            "uuid": "f8fb93a9-9e43-4294-a5b5-ec8269b99ef5",
-            "city": "15",
-            "area": "Mahanagar",
-            "totalRatingsString": "1000+ ratings",
-            "cloudinaryImageId": "f6etwqizmuaxxe21vxmu",
-            "cuisines": [
-                "Chinese",
-                "Arabian"
-            ],
-            "tags": [],
-            "costForTwo": 25000,
-            "costForTwoString": "₹250 FOR TWO",
-            "deliveryTime": 28,
-            "minDeliveryTime": 28,
-            "maxDeliveryTime": 28,
-            "slaString": "28 MINS",
-            "lastMileTravel": 3.9000000953674316,
-            "slugs": {
-                "restaurant": "red-dragon-chopstick-aliganj-aliganj",
-                "city": "lucknow"
-            },
-            "cityState": "15",
-            "address": "B-749, Sector - C, Mahanagar, Next to SBI",
-            "locality": "Sector C",
-            "parentId": 168369,
-            "unserviceable": false,
-            "veg": false,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "aggregatedDiscountInfo": {
-                "header": "50% off",
-                "shortDescriptionList": [
-                    {
-                        "meta": "50% off | Use WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "50% off up to ₹100 | Use code WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "aggregatedDiscountInfoV2": {
-                "header": "50% OFF",
-                "shortDescriptionList": [
-                    {
-                        "meta": "Use WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "50% off up to ₹100 | Use code WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "ribbon": [
-                {
-                    "type": "PROMOTED"
-                }
-            ],
-            "chain": [],
-            "feeDetails": {
-                "fees": [],
-                "totalFees": 0,
-                "message": "",
-                "title": "",
-                "amount": "",
-                "icon": ""
-            },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
-            },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "cid=5730657~p=10~eid=00000185-b1b1-b54e-3ba8-963800b80a15",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
-            },
-            "lastMileTravelString": "3.9 kms",
-            "hasSurge": false,
-            "sla": {
-                "restaurantId": "82387",
-                "deliveryTime": 28,
-                "minDeliveryTime": 28,
-                "maxDeliveryTime": 28,
-                "lastMileTravel": 3.9000000953674316,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
-            },
-            "promoted": true,
-            "avgRating": "3.8",
-            "totalRatings": 1000,
-            "new": false
-        },
-        "subtype": "basic"
-    },
-    {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "59201",
-            "name": "Rollarappaa",
-            "uuid": "b2c1da17-6151-4000-ac1f-5b7efbefc18c",
-            "city": "15",
-            "area": "Vishal Khand",
-            "totalRatingsString": "100+ ratings",
-            "cloudinaryImageId": "f0ieeg6imomvqxvd0m5x",
-            "cuisines": [
-                "Street Food",
-                "Indian",
-                "Snacks"
-            ],
-            "tags": [],
-            "costForTwo": 20000,
-            "costForTwoString": "₹200 FOR TWO",
-            "deliveryTime": 32,
-            "minDeliveryTime": 32,
-            "maxDeliveryTime": 32,
-            "slaString": "32 MINS",
-            "lastMileTravel": 5.800000190734863,
-            "slugs": {
-                "restaurant": "rollarappaa-episode-03-gomti-nagar-gomti-nagar",
-                "city": "lucknow"
-            },
-            "cityState": "15",
-            "address": "1/1155, Vishal Khand, Near St. Joseph Hospital, Gomti Nagar, Lucknow, Uttar Pradesh 226010",
-            "locality": "Mithaiwala Chauraha",
-            "parentId": 6263,
-            "unserviceable": false,
-            "veg": false,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "aggregatedDiscountInfo": {
-                "header": "60% off",
-                "shortDescriptionList": [
-                    {
-                        "meta": "60% off | Use TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "60% off up to ₹120 | Use code TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "aggregatedDiscountInfoV2": {
-                "header": "60% OFF",
-                "shortDescriptionList": [
-                    {
-                        "meta": "Use TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "60% off up to ₹120 | Use code TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "ribbon": [
-                {
-                    "type": "PROMOTED"
-                }
-            ],
-            "chain": [],
-            "feeDetails": {
-                "fees": [],
-                "totalFees": 0,
-                "message": "",
-                "title": "",
-                "amount": "",
-                "icon": ""
-            },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
-            },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "cid=5694364~p=19~eid=00000185-b1b1-b54e-3ba8-963b00b8130a",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
-            },
-            "lastMileTravelString": "5.8 kms",
-            "hasSurge": false,
-            "sla": {
-                "restaurantId": "59201",
-                "deliveryTime": 32,
-                "minDeliveryTime": 32,
-                "maxDeliveryTime": 32,
-                "lastMileTravel": 5.800000190734863,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
-            },
-            "promoted": true,
-            "avgRating": "3.8",
-            "totalRatings": 100,
-            "new": false
-        },
-        "subtype": "basic"
-    },
-    {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "517970",
-            "name": "Hungry Kya",
-            "uuid": "3ebbb28f-060b-4507-82c5-d8f46ff3014c",
-            "city": "15",
-            "area": "Hazratganj",
-            "totalRatingsString": "20+ ratings",
-            "cloudinaryImageId": "qtda3vuvwmzjyms9gfi4",
-            "cuisines": [
-                "North Indian",
-                "Chinese",
-                "Biryani",
-                "Snacks"
-            ],
-            "tags": [],
-            "costForTwo": 20000,
-            "costForTwoString": "₹200 FOR TWO",
-            "deliveryTime": 29,
-            "minDeliveryTime": 29,
-            "maxDeliveryTime": 29,
-            "slaString": "29 MINS",
-            "lastMileTravel": 0.10000000149011612,
-            "slugs": {
-                "restaurant": "hungry-kya-hazratganj-hazratganj",
-                "city": "lucknow"
-            },
-            "cityState": "15",
-            "address": "41/591 SETH RAM JAS ROAD HAZRATGANJ LUCKNOW  226001",
-            "locality": "Seth Ram Jas Road",
-            "parentId": 104763,
-            "unserviceable": false,
-            "veg": false,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "aggregatedDiscountInfo": {
-                "header": "60% off",
-                "shortDescriptionList": [
-                    {
-                        "meta": "60% off | Use TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "60% off up to ₹120 | Use code TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "aggregatedDiscountInfoV2": {
-                "header": "60% OFF",
-                "shortDescriptionList": [
-                    {
-                        "meta": "Use TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "60% off up to ₹120 | Use code TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "chain": [],
-            "feeDetails": {
-                "fees": [],
-                "totalFees": 0,
-                "message": "",
-                "title": "",
-                "amount": "",
-                "icon": ""
-            },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
-            },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
-            },
-            "lastMileTravelString": "0.1 kms",
-            "hasSurge": false,
-            "sla": {
-                "restaurantId": "517970",
-                "deliveryTime": 29,
-                "minDeliveryTime": 29,
-                "maxDeliveryTime": 29,
-                "lastMileTravel": 0.10000000149011612,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
-            },
-            "promoted": false,
-            "avgRating": "3.5",
-            "totalRatings": 20,
-            "new": false
-        },
-        "subtype": "basic"
-    },
-    {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "59654",
-            "name": "Subway",
-            "uuid": "50a31a98-fa92-4a7b-84ff-adbf0eea1fde",
-            "city": "15",
-            "area": "Hazratganj",
-            "totalRatingsString": "500+ ratings",
-            "cloudinaryImageId": "l6wwmtxza0muuwxsde91",
-            "cuisines": [
-                "Healthy Food",
-                "Salads",
-                "Snacks",
-                "Desserts",
-                "Beverages"
-            ],
-            "tags": [],
-            "costForTwo": 35000,
-            "costForTwoString": "₹350 FOR TWO",
-            "deliveryTime": 24,
-            "minDeliveryTime": 24,
-            "maxDeliveryTime": 24,
-            "slaString": "24 MINS",
-            "lastMileTravel": 0.8999999761581421,
-            "slugs": {
-                "restaurant": "subway-hazratganj-hazratganj",
-                "city": "lucknow"
-            },
-            "cityState": "15",
-            "address": "6, Sapru Marg, Hazratganj, Lucknow",
-            "locality": "Sapru Marg",
-            "parentId": 2,
-            "unserviceable": false,
-            "veg": false,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "aggregatedDiscountInfo": {
-                "header": "50% off",
-                "shortDescriptionList": [
-                    {
-                        "meta": "50% off | Use WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "50% off up to ₹100 | Use code WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "aggregatedDiscountInfoV2": {
-                "header": "50% OFF",
-                "shortDescriptionList": [
-                    {
-                        "meta": "Use WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "50% off up to ₹100 | Use code WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "ribbon": [
-                {
-                    "type": "PROMOTED"
-                }
-            ],
-            "chain": [],
-            "feeDetails": {
-                "fees": [],
-                "totalFees": 0,
-                "message": "",
-                "title": "",
-                "amount": "",
-                "icon": ""
-            },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
-            },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "cid=5729450~p=13~eid=00000185-b1b1-b54e-3ba8-963900b80d1f",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
-            },
-            "lastMileTravelString": "0.8 kms",
-            "hasSurge": false,
-            "sla": {
-                "restaurantId": "59654",
-                "deliveryTime": 24,
-                "minDeliveryTime": 24,
-                "maxDeliveryTime": 24,
-                "lastMileTravel": 0.8999999761581421,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
-            },
-            "promoted": true,
-            "avgRating": "4.0",
-            "totalRatings": 500,
-            "new": false
-        },
-        "subtype": "basic"
-    },
-    {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "482623",
-            "name": "Kwality Walls Frozen Dessert and Ice Cream Shop",
-            "uuid": "86b0f42f-412c-4e36-883c-c25472cd3339",
-            "city": "15",
-            "area": "Hazratganj",
-            "totalRatingsString": "100+ ratings",
-            "cloudinaryImageId": "kvyfk7rtq0fbnziynffg",
-            "cuisines": [
-                "Desserts",
-                "Ice Cream",
-                "Ice Cream Cakes"
-            ],
-            "tags": [],
-            "costForTwo": 20000,
-            "costForTwoString": "₹200 FOR TWO",
-            "deliveryTime": 21,
-            "minDeliveryTime": 21,
-            "maxDeliveryTime": 21,
-            "slaString": "21 MINS",
-            "lastMileTravel": 0.8999999761581421,
-            "slugs": {
-                "restaurant": "kwality-wall’s-frozen-dessert-&-ice-cream-shop-hazratganj-hazratganj",
-                "city": "lucknow"
-            },
-            "cityState": "15",
-            "address": "GOLDI ICE CREAM: SHOP NO-1 NEW MARKET HAZRATGANJ LUCKNOW, Nagar Nigam Food Safety Zone-2, Lucknow, Uttar Pradesh-226001 (HUL- I370915P592)",
-            "locality": "Nagar Nigam Food Safety Zone-2",
-            "parentId": 582,
-            "unserviceable": false,
-            "veg": true,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "aggregatedDiscountInfo": {
-                "header": "50% off",
-                "shortDescriptionList": [
-                    {
-                        "meta": "50% off | Use WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "50% off up to ₹100 | Use code WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "aggregatedDiscountInfoV2": {
-                "header": "50% OFF",
-                "shortDescriptionList": [
-                    {
-                        "meta": "Use WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "50% off up to ₹100 | Use code WELCOME50",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "chain": [],
-            "feeDetails": {
-                "fees": [],
-                "totalFees": 0,
-                "message": "",
-                "title": "",
-                "amount": "",
-                "icon": ""
-            },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
-            },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
-            },
-            "lastMileTravelString": "0.8 kms",
-            "hasSurge": false,
-            "sla": {
-                "restaurantId": "482623",
-                "deliveryTime": 21,
-                "minDeliveryTime": 21,
-                "maxDeliveryTime": 21,
-                "lastMileTravel": 0.8999999761581421,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
-            },
-            "promoted": false,
-            "avgRating": "4.6",
-            "totalRatings": 100,
-            "new": false
-        },
-        "subtype": "basic"
-    },
-    {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "63376",
-            "name": "Keventers - Milkshakes & Desserts",
-            "uuid": "958e4510-0326-4d69-80df-2ec6e7caf537",
-            "city": "15",
-            "area": "Hazratganj",
-            "totalRatingsString": "100+ ratings",
-            "cloudinaryImageId": "416741409e6766000c32447336e341e7",
-            "cuisines": [
-                "Beverages",
-                "Ice Cream",
-                "Desserts",
-                "Healthy Food"
-            ],
-            "tags": [],
-            "costForTwo": 20000,
-            "costForTwoString": "₹200 FOR TWO",
-            "deliveryTime": 19,
-            "minDeliveryTime": 19,
-            "maxDeliveryTime": 19,
-            "slaString": "19 MINS",
-            "lastMileTravel": 0.8999999761581421,
-            "slugs": {
-                "restaurant": "keventers-sas-house-hazratganj",
-                "city": "lucknow"
-            },
-            "cityState": "15",
-            "address": "ATM 6B, Sas House, Sapru Marg Hazratganj,Lucknow 226001",
-            "locality": "Sas House",
-            "parentId": 268997,
-            "unserviceable": false,
-            "veg": true,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "aggregatedDiscountInfo": {
-                "header": "40% off",
-                "shortDescriptionList": [
-                    {
-                        "meta": "40% off | Use TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "40% off up to ₹80 | Use code TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "aggregatedDiscountInfoV2": {
-                "header": "40% OFF",
-                "shortDescriptionList": [
-                    {
-                        "meta": "Use TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "40% off up to ₹80 | Use code TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "chain": [],
-            "feeDetails": {
-                "fees": [],
-                "totalFees": 0,
-                "message": "",
-                "title": "",
-                "amount": "",
-                "icon": ""
-            },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
-            },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
-            },
-            "lastMileTravelString": "0.8 kms",
-            "hasSurge": false,
-            "sla": {
-                "restaurantId": "63376",
-                "deliveryTime": 19,
-                "minDeliveryTime": 19,
-                "maxDeliveryTime": 19,
-                "lastMileTravel": 0.8999999761581421,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
-            },
-            "promoted": false,
-            "avgRating": "4.2",
-            "totalRatings": 100,
-            "new": false
-        },
-        "subtype": "basic"
-    },
-    {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "333677",
-            "name": "Wat-a-Burger! - India ka Burger",
-            "uuid": "11f76154-1397-4df0-a744-c408847f9390",
-            "city": "15",
-            "area": "Hazratganj",
-            "totalRatingsString": "100+ ratings",
-            "cloudinaryImageId": "nnc0k18liyz59xlz2a9z",
-            "cuisines": [
-                "American",
-                "Indian",
-                "Snacks",
-                "Desserts",
-                "Beverages"
-            ],
-            "tags": [],
-            "costForTwo": 30000,
-            "costForTwoString": "₹300 FOR TWO",
-            "deliveryTime": 29,
-            "minDeliveryTime": 29,
-            "maxDeliveryTime": 29,
-            "slaString": "29 MINS",
-            "lastMileTravel": 1,
-            "slugs": {
-                "restaurant": "wat-a-burger-hazratganj-hazratganj",
-                "city": "lucknow"
-            },
-            "cityState": "15",
-            "address": "NEW MARKET, SHOP NO. 4, NEAR MULTI LEVEL PARKING, HAZRATGANJ, LUCKNOW, Lucknow, Uttar Pradesh, 226006",
-            "locality": "Near Multi Level Parking",
-            "parentId": 384458,
-            "unserviceable": false,
-            "veg": false,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "aggregatedDiscountInfo": {
-                "header": "60% off",
-                "shortDescriptionList": [
-                    {
-                        "meta": "60% off | Use TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "60% off up to ₹120 | Use code TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "aggregatedDiscountInfoV2": {
-                "header": "60% OFF",
-                "shortDescriptionList": [
-                    {
-                        "meta": "Use TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "descriptionList": [
-                    {
-                        "meta": "60% off up to ₹120 | Use code TRYNEW",
-                        "discountType": "Percentage",
-                        "operationType": "RESTAURANT"
-                    }
-                ],
-                "subHeader": "",
-                "headerType": 0,
-                "superFreedel": ""
-            },
-            "chain": [],
-            "feeDetails": {
-                "fees": [],
-                "totalFees": 0,
-                "message": "",
-                "title": "",
-                "amount": "",
-                "icon": ""
-            },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
-            },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
-            },
-            "lastMileTravelString": "1 kms",
-            "hasSurge": false,
-            "sla": {
-                "restaurantId": "333677",
-                "deliveryTime": 29,
-                "minDeliveryTime": 29,
-                "maxDeliveryTime": 29,
-                "lastMileTravel": 1,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
-            },
-            "promoted": false,
-            "avgRating": "4.2",
-            "totalRatings": 100,
-            "new": false
-        },
-        "subtype": "basic"
-    }
-];
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bMboU":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$ffb1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$ffb1.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _constants = require("../constants");
-const RestaurantCard = ({ name , cuisines , avgRating , cloudinaryImageId  })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "card",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                alt: "swiggy",
-                src: (0, _constants.IMG_CDN_URL) + cloudinaryImageId
-            }, void 0, false, {
-                fileName: "src/components/RestaurantCard.js",
-                lineNumber: 9,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: name
-            }, void 0, false, {
-                fileName: "src/components/RestaurantCard.js",
-                lineNumber: 10,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: cuisines.join(",")
-            }, void 0, false, {
-                fileName: "src/components/RestaurantCard.js",
-                lineNumber: 11,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: [
-                    avgRating,
-                    " stars"
-                ]
-            }, void 0, true, {
-                fileName: "src/components/RestaurantCard.js",
-                lineNumber: 12,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/RestaurantCard.js",
-        lineNumber: 8,
-        columnNumber: 10
-    }, undefined);
-};
-_c = RestaurantCard;
-exports.default = RestaurantCard;
-var _c;
-$RefreshReg$(_c, "RestaurantCard");
-
-  $parcel$ReactRefreshHelpers$ffb1.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","../constants":"3huJa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"g6ZGj":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$0b04 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$0b04.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Shimmer = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "restaurant-list",
-        children: Array(15).fill("").map((e, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card",
-                children: " "
-            }, index, false, {
-                fileName: "src/components/Shimmer.js",
-                lineNumber: 3,
-                columnNumber: 47
-            }, undefined))
-    }, void 0, false, {
-        fileName: "src/components/Shimmer.js",
-        lineNumber: 2,
-        columnNumber: 10
-    }, undefined);
-};
-_c = Shimmer;
-exports.default = Shimmer;
-var _c;
-$RefreshReg$(_c, "Shimmer");
-
-  $parcel$ReactRefreshHelpers$0b04.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8pPOA":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$bc7c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$bc7c.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Footer = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-        children: "Footer"
-    }, void 0, false, {
-        fileName: "src/components/Footer.js",
-        lineNumber: 2,
-        columnNumber: 10
-    }, undefined);
-};
-_c = Footer;
-exports.default = Footer;
-var _c;
-$RefreshReg$(_c, "Footer");
-
-  $parcel$ReactRefreshHelpers$bc7c.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9xmpe":[function(require,module,exports) {
+},{"7fc6c8c1a9c856ae":"786KC"}],"9xmpe":[function(require,module,exports) {
 /**
  * React Router DOM v6.7.0
  *
@@ -34571,7 +32509,2128 @@ function getTargetMatch(matches, location) {
     return pathMatches[pathMatches.length - 1];
 } //#endregion
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9R1Eu":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8yaV8":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0606 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0606.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _constants = require("../constants");
+var _restaurantCard = require("./RestaurantCard");
+var _restaurantCardDefault = parcelHelpers.interopDefault(_restaurantCard);
+var _shimmer = require("./Shimmer");
+var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
+var _s = $RefreshSig$();
+function filterData(searchText, restaurants) {
+    const filterData = restaurants.filter((restaurant)=>restaurant?.data?.name?.toLowerCase()?.includes(searchText?.toLowerCase()));
+    return filterData;
+}
+const Body = ()=>{
+    _s();
+    const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]);
+    const [searchText, setSearchText] = (0, _react.useState)("");
+    const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]);
+    (0, _react.useEffect)(()=>{
+        //Api call
+        getRestaurants();
+    }, []);
+    async function getRestaurants() {
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.8466937&lng=80.94616599999999&page_type=DESKTOP_WEB_LISTING");
+        const json = await data.json();
+        setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+        setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    }
+    if (!allRestaurants) return null;
+    // if (filteredRestaurants?.length === 0)
+    //   return <h1>No Restaurants match your filter !!!</h1>;
+    return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
+        fileName: "src/components/Body.js",
+        lineNumber: 27,
+        columnNumber: 41
+    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "search-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        className: "search-input",
+                        placeholder: "Search",
+                        value: searchText,
+                        onChange: (e)=>{
+                            setSearchText(e.target.value);
+                        }
+                    }, void 0, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 29,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "search-btn",
+                        onClick: ()=>{
+                            const data = filterData(searchText, allRestaurants);
+                            setFilteredRestaurants(data);
+                        },
+                        children: "Search"
+                    }, void 0, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 32,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Body.js",
+                lineNumber: 28,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "restaurant-list",
+                children: filteredRestaurants.map((restaurant)=>{
+                    return /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCardDefault.default), {
+                        ...restaurant.data,
+                        key: restaurant.data.id,
+                        __source: {
+                            fileName: "src/components/Body.js",
+                            lineNumber: 41,
+                            columnNumber: 16
+                        },
+                        __self: undefined
+                    });
+                })
+            }, void 0, false, {
+                fileName: "src/components/Body.js",
+                lineNumber: 39,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true);
+};
+_s(Body, "45P24LJzPR4GsPuueZH7z/+skgo=");
+_c = Body;
+exports.default = Body;
+var _c;
+$RefreshReg$(_c, "Body");
+
+  $parcel$ReactRefreshHelpers$0606.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../constants":"3huJa","./RestaurantCard":"bMboU","./Shimmer":"g6ZGj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3huJa":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "IMG_CDN_URL", ()=>IMG_CDN_URL);
+parcelHelpers.export(exports, "restaurantList", ()=>restaurantList);
+const IMG_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+const restaurantList = [
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "65085",
+            "name": "Mughal Zaika Aminabad",
+            "uuid": "4cb63a38-b2d1-465f-bb1d-6a51fd5237f8",
+            "city": "15",
+            "area": "Aminabad",
+            "totalRatingsString": "1000+ ratings",
+            "cloudinaryImageId": "yood4aumr1wbxed1odxk",
+            "cuisines": [
+                "Mughlai"
+            ],
+            "tags": [],
+            "costForTwo": 30000,
+            "costForTwoString": "₹300 FOR TWO",
+            "deliveryTime": 34,
+            "minDeliveryTime": 34,
+            "maxDeliveryTime": 34,
+            "slaString": "34 MINS",
+            "lastMileTravel": 3,
+            "slugs": {
+                "restaurant": "mughal-zaika-aminabad-hazratganj",
+                "city": "lucknow"
+            },
+            "cityState": "15",
+            "address": "Naaz Cinema Road, AminabadMarket, Aminabad, Lucknow",
+            "locality": "Aminabadmarket",
+            "parentId": 140984,
+            "unserviceable": false,
+            "veg": false,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "aggregatedDiscountInfo": {
+                "header": "60% off",
+                "shortDescriptionList": [
+                    {
+                        "meta": "60% off | Use TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "60% off up to ₹120 | Use code TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "aggregatedDiscountInfoV2": {
+                "header": "60% OFF",
+                "shortDescriptionList": [
+                    {
+                        "meta": "Use TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "60% off up to ₹120 | Use code TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "ribbon": [
+                {
+                    "type": "PROMOTED"
+                }
+            ],
+            "chain": [],
+            "feeDetails": {
+                "fees": [],
+                "totalFees": 0,
+                "message": "",
+                "title": "",
+                "amount": "",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "cid=5730638~p=1~eid=00000185-b1b1-b54e-3ba8-963500b80167",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "3 kms",
+            "hasSurge": false,
+            "sla": {
+                "restaurantId": "65085",
+                "deliveryTime": 34,
+                "minDeliveryTime": 34,
+                "maxDeliveryTime": 34,
+                "lastMileTravel": 3,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": true,
+            "avgRating": "4.1",
+            "totalRatings": 1000,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "231204",
+            "name": "Burger King",
+            "uuid": "42703785-8706-4834-9459-cbfeeeff451b",
+            "city": "15",
+            "area": "Hazratganj",
+            "totalRatingsString": "1000+ ratings",
+            "cloudinaryImageId": "b1nbyfvq3wbrcpzbqpmu",
+            "cuisines": [
+                "Burgers",
+                "American"
+            ],
+            "tags": [],
+            "costForTwo": 35000,
+            "costForTwoString": "₹350 FOR TWO",
+            "deliveryTime": 32,
+            "minDeliveryTime": 32,
+            "maxDeliveryTime": 32,
+            "slaString": "32 MINS",
+            "lastMileTravel": 1,
+            "slugs": {
+                "restaurant": "burger-king-hazratganj-hazratganj",
+                "city": "lucknow"
+            },
+            "cityState": "15",
+            "address": "Burger King, Limited Ground floor Sahu Theater Building,Hazratganj Lucknow 226001",
+            "locality": "Sahu Cinemax",
+            "parentId": 166,
+            "unserviceable": false,
+            "veg": false,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "aggregatedDiscountInfo": {
+                "header": "60% off",
+                "shortDescriptionList": [
+                    {
+                        "meta": "60% off | Use STEALDEAL",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "60% off up to ₹120 | Use code STEALDEAL",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "aggregatedDiscountInfoV2": {
+                "header": "60% OFF",
+                "shortDescriptionList": [
+                    {
+                        "meta": "Use STEALDEAL",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "60% off up to ₹120 | Use code STEALDEAL",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "chain": [],
+            "feeDetails": {
+                "fees": [],
+                "totalFees": 0,
+                "message": "",
+                "title": "",
+                "amount": "",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "1 kms",
+            "hasSurge": false,
+            "sla": {
+                "restaurantId": "231204",
+                "deliveryTime": 32,
+                "minDeliveryTime": 32,
+                "maxDeliveryTime": 32,
+                "lastMileTravel": 1,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": false,
+            "avgRating": "4.1",
+            "totalRatings": 1000,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "60240",
+            "name": "Pizza Hut",
+            "uuid": "468e0627-2bd1-494f-b0cc-f33eec698ae8",
+            "city": "15",
+            "area": "The Mall Avenue",
+            "totalRatingsString": "500+ ratings",
+            "cloudinaryImageId": "exd0x5wjdxovdwbnfqiz",
+            "cuisines": [
+                "Pizzas"
+            ],
+            "tags": [],
+            "costForTwo": 35000,
+            "costForTwoString": "₹350 FOR TWO",
+            "deliveryTime": 29,
+            "minDeliveryTime": 29,
+            "maxDeliveryTime": 29,
+            "slaString": "29 MINS",
+            "lastMileTravel": 0.800000011920929,
+            "slugs": {
+                "restaurant": "pizza-hut-governer-house-hazratganj",
+                "city": "lucknow"
+            },
+            "cityState": "15",
+            "address": "91 M.G. Marg Opp Governer House, Hazratganj, Lucknow 226001",
+            "locality": "Governer House",
+            "parentId": 721,
+            "unserviceable": false,
+            "veg": false,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "aggregatedDiscountInfo": {
+                "header": "50% off",
+                "shortDescriptionList": [
+                    {
+                        "meta": "50% off | Use TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "50% off up to ₹100 | Use code TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "aggregatedDiscountInfoV2": {
+                "header": "50% OFF",
+                "shortDescriptionList": [
+                    {
+                        "meta": "Use TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "50% off up to ₹100 | Use code TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "chain": [],
+            "feeDetails": {
+                "fees": [],
+                "totalFees": 0,
+                "message": "",
+                "title": "",
+                "amount": "",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "0.8 kms",
+            "hasSurge": false,
+            "sla": {
+                "restaurantId": "60240",
+                "deliveryTime": 29,
+                "minDeliveryTime": 29,
+                "maxDeliveryTime": 29,
+                "lastMileTravel": 0.800000011920929,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": false,
+            "avgRating": "3.7",
+            "totalRatings": 500,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "424623",
+            "name": "The kalika Hut",
+            "uuid": "c00c99b8-da0a-4f6e-8569-fec5e14fa34b",
+            "city": "15",
+            "area": "Hazratganj",
+            "totalRatingsString": "500+ ratings",
+            "cloudinaryImageId": "qmewcacsigu7fsh7xtni",
+            "cuisines": [
+                "Desserts",
+                "North Indian"
+            ],
+            "tags": [],
+            "costForTwo": 30000,
+            "costForTwoString": "₹300 FOR TWO",
+            "deliveryTime": 26,
+            "minDeliveryTime": 26,
+            "maxDeliveryTime": 26,
+            "slaString": "26 MINS",
+            "lastMileTravel": 1.7999999523162842,
+            "slugs": {
+                "restaurant": "the-kalika-hut-hazratganj-hazratganj",
+                "city": "lucknow"
+            },
+            "cityState": "15",
+            "address": "Shop no 5 Near K D Singh Babu Stadium Hazratganj lucknow.226001",
+            "locality": "Near K D Singh",
+            "parentId": 4848,
+            "unserviceable": false,
+            "veg": false,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "aggregatedDiscountInfo": {
+                "header": "60% off",
+                "shortDescriptionList": [
+                    {
+                        "meta": "60% off | Use TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "60% off up to ₹120 | Use code TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "aggregatedDiscountInfoV2": {
+                "header": "60% OFF",
+                "shortDescriptionList": [
+                    {
+                        "meta": "Use TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "60% off up to ₹120 | Use code TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "ribbon": [
+                {
+                    "type": "PROMOTED"
+                }
+            ],
+            "chain": [],
+            "feeDetails": {
+                "fees": [],
+                "totalFees": 0,
+                "message": "",
+                "title": "",
+                "amount": "",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "cid=5730642~p=7~eid=00000185-b1b1-b54e-3ba8-963700b8075a",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "1.7 kms",
+            "hasSurge": false,
+            "sla": {
+                "restaurantId": "424623",
+                "deliveryTime": 26,
+                "minDeliveryTime": 26,
+                "maxDeliveryTime": 26,
+                "lastMileTravel": 1.7999999523162842,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": true,
+            "avgRating": "4.0",
+            "totalRatings": 500,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "213869",
+            "name": "Pocket Bites",
+            "uuid": "0b449580-66d8-430c-95d3-eac327bcf3ce",
+            "city": "15",
+            "area": "Lucknow",
+            "totalRatingsString": "100+ ratings",
+            "cloudinaryImageId": "vmnmq2dtcvztaw7gswmi",
+            "cuisines": [
+                "Chinese",
+                "Snacks",
+                "Biryani",
+                "North Indian",
+                "Desserts",
+                "Lucknowi"
+            ],
+            "tags": [],
+            "costForTwo": 20000,
+            "costForTwoString": "₹200 FOR TWO",
+            "deliveryTime": 23,
+            "minDeliveryTime": 23,
+            "maxDeliveryTime": 23,
+            "slaString": "23 MINS",
+            "lastMileTravel": 0.10000000149011612,
+            "slugs": {
+                "restaurant": "pocket-bites-hazratganj-hazratganj",
+                "city": "lucknow"
+            },
+            "cityState": "15",
+            "address": "41/591, Seth Ramjas Road, Tarikhana, Narhi, Hazratganj, Lucknow, Uttar Pradesh, India",
+            "locality": "Hazratganj",
+            "parentId": 373820,
+            "unserviceable": false,
+            "veg": true,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "aggregatedDiscountInfo": {
+                "header": "50% off",
+                "shortDescriptionList": [
+                    {
+                        "meta": "50% off | Use WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "50% off up to ₹100 | Use code WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "aggregatedDiscountInfoV2": {
+                "header": "50% OFF",
+                "shortDescriptionList": [
+                    {
+                        "meta": "Use WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "50% off up to ₹100 | Use code WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "chain": [],
+            "feeDetails": {
+                "fees": [],
+                "totalFees": 0,
+                "message": "",
+                "title": "",
+                "amount": "",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "0.1 kms",
+            "hasSurge": false,
+            "sla": {
+                "restaurantId": "213869",
+                "deliveryTime": 23,
+                "minDeliveryTime": 23,
+                "maxDeliveryTime": 23,
+                "lastMileTravel": 0.10000000149011612,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": false,
+            "avgRating": "3.9",
+            "totalRatings": 100,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "453646",
+            "name": "SNACKS & SHAKES",
+            "uuid": "c898d04d-7e4d-4aff-bb69-a849aedd917b",
+            "city": "15",
+            "area": "Hazratganj",
+            "totalRatingsString": "20+ ratings",
+            "cloudinaryImageId": "c3y4gwdmnbqrfhvnqjxi",
+            "cuisines": [
+                "Snacks",
+                "Chinese",
+                "Desserts"
+            ],
+            "tags": [],
+            "costForTwo": 20000,
+            "costForTwoString": "₹200 FOR TWO",
+            "deliveryTime": 36,
+            "minDeliveryTime": 36,
+            "maxDeliveryTime": 36,
+            "slaString": "36 MINS",
+            "lastMileTravel": 0.10000000149011612,
+            "slugs": {
+                "restaurant": "snacks-&-shakes-hazratganj-hazratganj",
+                "city": "lucknow"
+            },
+            "cityState": "15",
+            "address": "41/591 SETH RAM JAD ROAD LUCKNOW",
+            "locality": "Seth Ram Jad Road",
+            "parentId": 190225,
+            "unserviceable": false,
+            "veg": true,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "aggregatedDiscountInfo": {
+                "header": "50% off",
+                "shortDescriptionList": [
+                    {
+                        "meta": "50% off | Use WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "50% off up to ₹100 | Use code WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "aggregatedDiscountInfoV2": {
+                "header": "50% OFF",
+                "shortDescriptionList": [
+                    {
+                        "meta": "Use WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "50% off up to ₹100 | Use code WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "chain": [],
+            "feeDetails": {
+                "fees": [],
+                "totalFees": 0,
+                "message": "",
+                "title": "",
+                "amount": "",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "0.1 kms",
+            "hasSurge": false,
+            "sla": {
+                "restaurantId": "453646",
+                "deliveryTime": 36,
+                "minDeliveryTime": 36,
+                "maxDeliveryTime": 36,
+                "lastMileTravel": 0.10000000149011612,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": false,
+            "avgRating": "3.4",
+            "totalRatings": 20,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "89361",
+            "name": "La Pino'z Pizza",
+            "uuid": "a23c86ec-1945-49f0-b7be-cf53e2ea052c",
+            "city": "15",
+            "area": "Hazratganj",
+            "totalRatingsString": "500+ ratings",
+            "cloudinaryImageId": "dek7ifvgfbnddngpqn4r",
+            "cuisines": [
+                "Pizzas",
+                "Italian"
+            ],
+            "tags": [],
+            "costForTwo": 25000,
+            "costForTwoString": "₹250 FOR TWO",
+            "deliveryTime": 26,
+            "minDeliveryTime": 26,
+            "maxDeliveryTime": 26,
+            "slaString": "26 MINS",
+            "lastMileTravel": 0.8999999761581421,
+            "slugs": {
+                "restaurant": "la-pinoz-pizza-hazratganj-hazratganj",
+                "city": "lucknow"
+            },
+            "cityState": "15",
+            "address": "6, Sapru Marg, Hazratganj, Lucknow",
+            "locality": "Sapru Marg",
+            "parentId": 4961,
+            "unserviceable": false,
+            "veg": false,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "aggregatedDiscountInfo": {
+                "header": "50% off",
+                "shortDescriptionList": [
+                    {
+                        "meta": "50% off | Use WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "50% off up to ₹100 | Use code WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "aggregatedDiscountInfoV2": {
+                "header": "50% OFF",
+                "shortDescriptionList": [
+                    {
+                        "meta": "Use WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "50% off up to ₹100 | Use code WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "chain": [],
+            "feeDetails": {
+                "fees": [],
+                "totalFees": 0,
+                "message": "",
+                "title": "",
+                "amount": "",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "0.8 kms",
+            "hasSurge": false,
+            "sla": {
+                "restaurantId": "89361",
+                "deliveryTime": 26,
+                "minDeliveryTime": 26,
+                "maxDeliveryTime": 26,
+                "lastMileTravel": 0.8999999761581421,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": false,
+            "avgRating": "4.1",
+            "totalRatings": 500,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "141379",
+            "name": "Burger point",
+            "uuid": "4f8caa81-81ee-43d0-9c04-13dafefe853f",
+            "city": "15",
+            "area": "Hazratganj",
+            "totalRatingsString": "100+ ratings",
+            "cloudinaryImageId": "siez5v7u2ja3h6ab6gnw",
+            "cuisines": [
+                "Snacks",
+                "Beverages"
+            ],
+            "tags": [],
+            "costForTwo": 20000,
+            "costForTwoString": "₹200 FOR TWO",
+            "deliveryTime": 23,
+            "minDeliveryTime": 23,
+            "maxDeliveryTime": 23,
+            "slaString": "23 MINS",
+            "lastMileTravel": 0.800000011920929,
+            "slugs": {
+                "restaurant": "burger-point-nawal-kishore-road-hazratganj",
+                "city": "lucknow"
+            },
+            "cityState": "15",
+            "address": "Burger Point BM Plaza Nawal Kishore Road Hazratganj",
+            "locality": "Nawal Kishore Road",
+            "parentId": 168,
+            "unserviceable": false,
+            "veg": false,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "aggregatedDiscountInfo": {
+                "header": "50% off",
+                "shortDescriptionList": [
+                    {
+                        "meta": "50% off | Use WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "50% off up to ₹100 | Use code WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "aggregatedDiscountInfoV2": {
+                "header": "50% OFF",
+                "shortDescriptionList": [
+                    {
+                        "meta": "Use WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "50% off up to ₹100 | Use code WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "chain": [],
+            "feeDetails": {
+                "fees": [],
+                "totalFees": 0,
+                "message": "",
+                "title": "",
+                "amount": "",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "0.8 kms",
+            "hasSurge": false,
+            "sla": {
+                "restaurantId": "141379",
+                "deliveryTime": 23,
+                "minDeliveryTime": 23,
+                "maxDeliveryTime": 23,
+                "lastMileTravel": 0.800000011920929,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": false,
+            "avgRating": "3.9",
+            "totalRatings": 100,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "82387",
+            "name": "Red Dragon (Chopstix)",
+            "uuid": "f8fb93a9-9e43-4294-a5b5-ec8269b99ef5",
+            "city": "15",
+            "area": "Mahanagar",
+            "totalRatingsString": "1000+ ratings",
+            "cloudinaryImageId": "f6etwqizmuaxxe21vxmu",
+            "cuisines": [
+                "Chinese",
+                "Arabian"
+            ],
+            "tags": [],
+            "costForTwo": 25000,
+            "costForTwoString": "₹250 FOR TWO",
+            "deliveryTime": 28,
+            "minDeliveryTime": 28,
+            "maxDeliveryTime": 28,
+            "slaString": "28 MINS",
+            "lastMileTravel": 3.9000000953674316,
+            "slugs": {
+                "restaurant": "red-dragon-chopstick-aliganj-aliganj",
+                "city": "lucknow"
+            },
+            "cityState": "15",
+            "address": "B-749, Sector - C, Mahanagar, Next to SBI",
+            "locality": "Sector C",
+            "parentId": 168369,
+            "unserviceable": false,
+            "veg": false,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "aggregatedDiscountInfo": {
+                "header": "50% off",
+                "shortDescriptionList": [
+                    {
+                        "meta": "50% off | Use WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "50% off up to ₹100 | Use code WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "aggregatedDiscountInfoV2": {
+                "header": "50% OFF",
+                "shortDescriptionList": [
+                    {
+                        "meta": "Use WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "50% off up to ₹100 | Use code WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "ribbon": [
+                {
+                    "type": "PROMOTED"
+                }
+            ],
+            "chain": [],
+            "feeDetails": {
+                "fees": [],
+                "totalFees": 0,
+                "message": "",
+                "title": "",
+                "amount": "",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "cid=5730657~p=10~eid=00000185-b1b1-b54e-3ba8-963800b80a15",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "3.9 kms",
+            "hasSurge": false,
+            "sla": {
+                "restaurantId": "82387",
+                "deliveryTime": 28,
+                "minDeliveryTime": 28,
+                "maxDeliveryTime": 28,
+                "lastMileTravel": 3.9000000953674316,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": true,
+            "avgRating": "3.8",
+            "totalRatings": 1000,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "59201",
+            "name": "Rollarappaa",
+            "uuid": "b2c1da17-6151-4000-ac1f-5b7efbefc18c",
+            "city": "15",
+            "area": "Vishal Khand",
+            "totalRatingsString": "100+ ratings",
+            "cloudinaryImageId": "f0ieeg6imomvqxvd0m5x",
+            "cuisines": [
+                "Street Food",
+                "Indian",
+                "Snacks"
+            ],
+            "tags": [],
+            "costForTwo": 20000,
+            "costForTwoString": "₹200 FOR TWO",
+            "deliveryTime": 32,
+            "minDeliveryTime": 32,
+            "maxDeliveryTime": 32,
+            "slaString": "32 MINS",
+            "lastMileTravel": 5.800000190734863,
+            "slugs": {
+                "restaurant": "rollarappaa-episode-03-gomti-nagar-gomti-nagar",
+                "city": "lucknow"
+            },
+            "cityState": "15",
+            "address": "1/1155, Vishal Khand, Near St. Joseph Hospital, Gomti Nagar, Lucknow, Uttar Pradesh 226010",
+            "locality": "Mithaiwala Chauraha",
+            "parentId": 6263,
+            "unserviceable": false,
+            "veg": false,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "aggregatedDiscountInfo": {
+                "header": "60% off",
+                "shortDescriptionList": [
+                    {
+                        "meta": "60% off | Use TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "60% off up to ₹120 | Use code TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "aggregatedDiscountInfoV2": {
+                "header": "60% OFF",
+                "shortDescriptionList": [
+                    {
+                        "meta": "Use TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "60% off up to ₹120 | Use code TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "ribbon": [
+                {
+                    "type": "PROMOTED"
+                }
+            ],
+            "chain": [],
+            "feeDetails": {
+                "fees": [],
+                "totalFees": 0,
+                "message": "",
+                "title": "",
+                "amount": "",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "cid=5694364~p=19~eid=00000185-b1b1-b54e-3ba8-963b00b8130a",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "5.8 kms",
+            "hasSurge": false,
+            "sla": {
+                "restaurantId": "59201",
+                "deliveryTime": 32,
+                "minDeliveryTime": 32,
+                "maxDeliveryTime": 32,
+                "lastMileTravel": 5.800000190734863,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": true,
+            "avgRating": "3.8",
+            "totalRatings": 100,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "517970",
+            "name": "Hungry Kya",
+            "uuid": "3ebbb28f-060b-4507-82c5-d8f46ff3014c",
+            "city": "15",
+            "area": "Hazratganj",
+            "totalRatingsString": "20+ ratings",
+            "cloudinaryImageId": "qtda3vuvwmzjyms9gfi4",
+            "cuisines": [
+                "North Indian",
+                "Chinese",
+                "Biryani",
+                "Snacks"
+            ],
+            "tags": [],
+            "costForTwo": 20000,
+            "costForTwoString": "₹200 FOR TWO",
+            "deliveryTime": 29,
+            "minDeliveryTime": 29,
+            "maxDeliveryTime": 29,
+            "slaString": "29 MINS",
+            "lastMileTravel": 0.10000000149011612,
+            "slugs": {
+                "restaurant": "hungry-kya-hazratganj-hazratganj",
+                "city": "lucknow"
+            },
+            "cityState": "15",
+            "address": "41/591 SETH RAM JAS ROAD HAZRATGANJ LUCKNOW  226001",
+            "locality": "Seth Ram Jas Road",
+            "parentId": 104763,
+            "unserviceable": false,
+            "veg": false,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "aggregatedDiscountInfo": {
+                "header": "60% off",
+                "shortDescriptionList": [
+                    {
+                        "meta": "60% off | Use TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "60% off up to ₹120 | Use code TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "aggregatedDiscountInfoV2": {
+                "header": "60% OFF",
+                "shortDescriptionList": [
+                    {
+                        "meta": "Use TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "60% off up to ₹120 | Use code TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "chain": [],
+            "feeDetails": {
+                "fees": [],
+                "totalFees": 0,
+                "message": "",
+                "title": "",
+                "amount": "",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "0.1 kms",
+            "hasSurge": false,
+            "sla": {
+                "restaurantId": "517970",
+                "deliveryTime": 29,
+                "minDeliveryTime": 29,
+                "maxDeliveryTime": 29,
+                "lastMileTravel": 0.10000000149011612,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": false,
+            "avgRating": "3.5",
+            "totalRatings": 20,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "59654",
+            "name": "Subway",
+            "uuid": "50a31a98-fa92-4a7b-84ff-adbf0eea1fde",
+            "city": "15",
+            "area": "Hazratganj",
+            "totalRatingsString": "500+ ratings",
+            "cloudinaryImageId": "l6wwmtxza0muuwxsde91",
+            "cuisines": [
+                "Healthy Food",
+                "Salads",
+                "Snacks",
+                "Desserts",
+                "Beverages"
+            ],
+            "tags": [],
+            "costForTwo": 35000,
+            "costForTwoString": "₹350 FOR TWO",
+            "deliveryTime": 24,
+            "minDeliveryTime": 24,
+            "maxDeliveryTime": 24,
+            "slaString": "24 MINS",
+            "lastMileTravel": 0.8999999761581421,
+            "slugs": {
+                "restaurant": "subway-hazratganj-hazratganj",
+                "city": "lucknow"
+            },
+            "cityState": "15",
+            "address": "6, Sapru Marg, Hazratganj, Lucknow",
+            "locality": "Sapru Marg",
+            "parentId": 2,
+            "unserviceable": false,
+            "veg": false,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "aggregatedDiscountInfo": {
+                "header": "50% off",
+                "shortDescriptionList": [
+                    {
+                        "meta": "50% off | Use WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "50% off up to ₹100 | Use code WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "aggregatedDiscountInfoV2": {
+                "header": "50% OFF",
+                "shortDescriptionList": [
+                    {
+                        "meta": "Use WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "50% off up to ₹100 | Use code WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "ribbon": [
+                {
+                    "type": "PROMOTED"
+                }
+            ],
+            "chain": [],
+            "feeDetails": {
+                "fees": [],
+                "totalFees": 0,
+                "message": "",
+                "title": "",
+                "amount": "",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "cid=5729450~p=13~eid=00000185-b1b1-b54e-3ba8-963900b80d1f",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "0.8 kms",
+            "hasSurge": false,
+            "sla": {
+                "restaurantId": "59654",
+                "deliveryTime": 24,
+                "minDeliveryTime": 24,
+                "maxDeliveryTime": 24,
+                "lastMileTravel": 0.8999999761581421,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": true,
+            "avgRating": "4.0",
+            "totalRatings": 500,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "482623",
+            "name": "Kwality Walls Frozen Dessert and Ice Cream Shop",
+            "uuid": "86b0f42f-412c-4e36-883c-c25472cd3339",
+            "city": "15",
+            "area": "Hazratganj",
+            "totalRatingsString": "100+ ratings",
+            "cloudinaryImageId": "kvyfk7rtq0fbnziynffg",
+            "cuisines": [
+                "Desserts",
+                "Ice Cream",
+                "Ice Cream Cakes"
+            ],
+            "tags": [],
+            "costForTwo": 20000,
+            "costForTwoString": "₹200 FOR TWO",
+            "deliveryTime": 21,
+            "minDeliveryTime": 21,
+            "maxDeliveryTime": 21,
+            "slaString": "21 MINS",
+            "lastMileTravel": 0.8999999761581421,
+            "slugs": {
+                "restaurant": "kwality-wall’s-frozen-dessert-&-ice-cream-shop-hazratganj-hazratganj",
+                "city": "lucknow"
+            },
+            "cityState": "15",
+            "address": "GOLDI ICE CREAM: SHOP NO-1 NEW MARKET HAZRATGANJ LUCKNOW, Nagar Nigam Food Safety Zone-2, Lucknow, Uttar Pradesh-226001 (HUL- I370915P592)",
+            "locality": "Nagar Nigam Food Safety Zone-2",
+            "parentId": 582,
+            "unserviceable": false,
+            "veg": true,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "aggregatedDiscountInfo": {
+                "header": "50% off",
+                "shortDescriptionList": [
+                    {
+                        "meta": "50% off | Use WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "50% off up to ₹100 | Use code WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "aggregatedDiscountInfoV2": {
+                "header": "50% OFF",
+                "shortDescriptionList": [
+                    {
+                        "meta": "Use WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "50% off up to ₹100 | Use code WELCOME50",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "chain": [],
+            "feeDetails": {
+                "fees": [],
+                "totalFees": 0,
+                "message": "",
+                "title": "",
+                "amount": "",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "0.8 kms",
+            "hasSurge": false,
+            "sla": {
+                "restaurantId": "482623",
+                "deliveryTime": 21,
+                "minDeliveryTime": 21,
+                "maxDeliveryTime": 21,
+                "lastMileTravel": 0.8999999761581421,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": false,
+            "avgRating": "4.6",
+            "totalRatings": 100,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "63376",
+            "name": "Keventers - Milkshakes & Desserts",
+            "uuid": "958e4510-0326-4d69-80df-2ec6e7caf537",
+            "city": "15",
+            "area": "Hazratganj",
+            "totalRatingsString": "100+ ratings",
+            "cloudinaryImageId": "416741409e6766000c32447336e341e7",
+            "cuisines": [
+                "Beverages",
+                "Ice Cream",
+                "Desserts",
+                "Healthy Food"
+            ],
+            "tags": [],
+            "costForTwo": 20000,
+            "costForTwoString": "₹200 FOR TWO",
+            "deliveryTime": 19,
+            "minDeliveryTime": 19,
+            "maxDeliveryTime": 19,
+            "slaString": "19 MINS",
+            "lastMileTravel": 0.8999999761581421,
+            "slugs": {
+                "restaurant": "keventers-sas-house-hazratganj",
+                "city": "lucknow"
+            },
+            "cityState": "15",
+            "address": "ATM 6B, Sas House, Sapru Marg Hazratganj,Lucknow 226001",
+            "locality": "Sas House",
+            "parentId": 268997,
+            "unserviceable": false,
+            "veg": true,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "aggregatedDiscountInfo": {
+                "header": "40% off",
+                "shortDescriptionList": [
+                    {
+                        "meta": "40% off | Use TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "40% off up to ₹80 | Use code TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "aggregatedDiscountInfoV2": {
+                "header": "40% OFF",
+                "shortDescriptionList": [
+                    {
+                        "meta": "Use TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "40% off up to ₹80 | Use code TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "chain": [],
+            "feeDetails": {
+                "fees": [],
+                "totalFees": 0,
+                "message": "",
+                "title": "",
+                "amount": "",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "0.8 kms",
+            "hasSurge": false,
+            "sla": {
+                "restaurantId": "63376",
+                "deliveryTime": 19,
+                "minDeliveryTime": 19,
+                "maxDeliveryTime": 19,
+                "lastMileTravel": 0.8999999761581421,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": false,
+            "avgRating": "4.2",
+            "totalRatings": 100,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "333677",
+            "name": "Wat-a-Burger! - India ka Burger",
+            "uuid": "11f76154-1397-4df0-a744-c408847f9390",
+            "city": "15",
+            "area": "Hazratganj",
+            "totalRatingsString": "100+ ratings",
+            "cloudinaryImageId": "nnc0k18liyz59xlz2a9z",
+            "cuisines": [
+                "American",
+                "Indian",
+                "Snacks",
+                "Desserts",
+                "Beverages"
+            ],
+            "tags": [],
+            "costForTwo": 30000,
+            "costForTwoString": "₹300 FOR TWO",
+            "deliveryTime": 29,
+            "minDeliveryTime": 29,
+            "maxDeliveryTime": 29,
+            "slaString": "29 MINS",
+            "lastMileTravel": 1,
+            "slugs": {
+                "restaurant": "wat-a-burger-hazratganj-hazratganj",
+                "city": "lucknow"
+            },
+            "cityState": "15",
+            "address": "NEW MARKET, SHOP NO. 4, NEAR MULTI LEVEL PARKING, HAZRATGANJ, LUCKNOW, Lucknow, Uttar Pradesh, 226006",
+            "locality": "Near Multi Level Parking",
+            "parentId": 384458,
+            "unserviceable": false,
+            "veg": false,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "aggregatedDiscountInfo": {
+                "header": "60% off",
+                "shortDescriptionList": [
+                    {
+                        "meta": "60% off | Use TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "60% off up to ₹120 | Use code TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "aggregatedDiscountInfoV2": {
+                "header": "60% OFF",
+                "shortDescriptionList": [
+                    {
+                        "meta": "Use TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "60% off up to ₹120 | Use code TRYNEW",
+                        "discountType": "Percentage",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "chain": [],
+            "feeDetails": {
+                "fees": [],
+                "totalFees": 0,
+                "message": "",
+                "title": "",
+                "amount": "",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "1 kms",
+            "hasSurge": false,
+            "sla": {
+                "restaurantId": "333677",
+                "deliveryTime": 29,
+                "minDeliveryTime": 29,
+                "maxDeliveryTime": 29,
+                "lastMileTravel": 1,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": false,
+            "avgRating": "4.2",
+            "totalRatings": 100,
+            "new": false
+        },
+        "subtype": "basic"
+    }
+];
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bMboU":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$ffb1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$ffb1.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _constants = require("../constants");
+const RestaurantCard = ({ name , cuisines , avgRating , cloudinaryImageId  })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "card",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                alt: "swiggy",
+                src: (0, _constants.IMG_CDN_URL) + cloudinaryImageId
+            }, void 0, false, {
+                fileName: "src/components/RestaurantCard.js",
+                lineNumber: 9,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: name
+            }, void 0, false, {
+                fileName: "src/components/RestaurantCard.js",
+                lineNumber: 10,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: cuisines.join(",")
+            }, void 0, false, {
+                fileName: "src/components/RestaurantCard.js",
+                lineNumber: 11,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: [
+                    avgRating,
+                    " stars"
+                ]
+            }, void 0, true, {
+                fileName: "src/components/RestaurantCard.js",
+                lineNumber: 12,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/RestaurantCard.js",
+        lineNumber: 8,
+        columnNumber: 10
+    }, undefined);
+};
+_c = RestaurantCard;
+exports.default = RestaurantCard;
+var _c;
+$RefreshReg$(_c, "RestaurantCard");
+
+  $parcel$ReactRefreshHelpers$ffb1.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","../constants":"3huJa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"g6ZGj":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0b04 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0b04.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Shimmer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "restaurant-list",
+        children: Array(15).fill("").map((e, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card",
+                children: " "
+            }, index, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 3,
+                columnNumber: 47
+            }, undefined))
+    }, void 0, false, {
+        fileName: "src/components/Shimmer.js",
+        lineNumber: 2,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Shimmer;
+exports.default = Shimmer;
+var _c;
+$RefreshReg$(_c, "Shimmer");
+
+  $parcel$ReactRefreshHelpers$0b04.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8pPOA":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$bc7c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$bc7c.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Footer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+        children: "Footer"
+    }, void 0, false, {
+        fileName: "src/components/Footer.js",
+        lineNumber: 2,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Footer;
+exports.default = Footer;
+var _c;
+$RefreshReg$(_c, "Footer");
+
+  $parcel$ReactRefreshHelpers$bc7c.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9R1Eu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5b98 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34611,6 +34670,141 @@ var _c;
 $RefreshReg$(_c, "About");
 
   $parcel$ReactRefreshHelpers$5b98.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kvula":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0ba4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0ba4.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
+const Error = ()=>{
+    _s();
+    const err = (0, _reactRouterDom.useRouteError)();
+    //destructure
+    const { status , statusText  } = err;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "Oops!!"
+            }, void 0, false, {
+                fileName: "src/components/Error.js",
+                lineNumber: 10,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: "Something went wrong"
+            }, void 0, false, {
+                fileName: "src/components/Error.js",
+                lineNumber: 11,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: err.status + " : " + err.statusText
+            }, void 0, false, {
+                fileName: "src/components/Error.js",
+                lineNumber: 12,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Error.js",
+        lineNumber: 9,
+        columnNumber: 10
+    }, undefined);
+};
+_s(Error, "U5GmGaAmh0j0MVy+E8WdBnjlm7s=", false, function() {
+    return [
+        (0, _reactRouterDom.useRouteError)
+    ];
+});
+_c = Error;
+exports.default = Error;
+var _c;
+$RefreshReg$(_c, "Error");
+
+  $parcel$ReactRefreshHelpers$0ba4.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"cgAOG":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$ee46 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$ee46.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Contact = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+        children: "Contact Us Page"
+    }, void 0, false, {
+        fileName: "src/components/Contact.js",
+        lineNumber: 2,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Contact;
+exports.default = Contact;
+var _c;
+$RefreshReg$(_c, "Contact");
+
+  $parcel$ReactRefreshHelpers$ee46.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8PuJ6":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$40d6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$40d6.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const RestaurantMenu = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: "Restaurant id:123 "
+            }, void 0, false, {
+                fileName: "src/components/RestaurantMenu.js",
+                lineNumber: 3,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: "Burger King "
+            }, void 0, false, {
+                fileName: "src/components/RestaurantMenu.js",
+                lineNumber: 4,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/RestaurantMenu.js",
+        lineNumber: 2,
+        columnNumber: 10
+    }, undefined);
+};
+_c = RestaurantMenu;
+exports.default = RestaurantMenu;
+var _c;
+$RefreshReg$(_c, "RestaurantMenu");
+
+  $parcel$ReactRefreshHelpers$40d6.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
