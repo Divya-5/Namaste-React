@@ -1,15 +1,24 @@
-//2ways to export
+import { useState } from "react";
+import Logo from "../assets/img/foodvilla.jpg";
+
+const loggedInUser = () =>{
+//api to authenticate
+return false;
+}
+
 const Title = () => (
     <a href="/">
         <img
             alt="logo"
             className="logo"
-            src="https://yt3.googleusercontent.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"
+            src={Logo}
         />
     </a>
 );
 
- const Header = () => (
+ const Header = () => {
+     const [isLoggedIn, setIsLoggedIn]= useState(false);
+     return(
     <div className="header">
         <Title />
         <div className="nav-items">
@@ -20,7 +29,11 @@ const Title = () => (
                 <li>Cart</li>
             </ul>
         </div>
+        {
+                 (isLoggedIn ? <button onClick={() => setIsLoggedIn(false)}>Logout</button> : <button onClick={() => setIsLoggedIn(true)}>Login</button>)
+        }
     </div>
-); 
+     );
+    }; 
 
 export default Header;

@@ -5,17 +5,13 @@ import Shimmer from "./Shimmer";
 
 function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
-    restaurant.data.name.includes(searchText)
+    restaurant?.data?.name?.toLowerCase()?.includes(searchText?.toLowerCase())
   );
   return filterData;
 }
 const Body = () => {
-  //USESTATE HOOK
-  //searchTxt is a local state variable
-  //destructing
-  const [allRestaurants,setAllRestaurants]= useState([]);
-  const [searchText, setSearchText] = useState(""); //returns [variable name, function to update the state variable]
-  // const [searchClick, setSearchClick] = useState("false");
+  const [allRestaurants, setAllRestaurants] = useState([]);
+  const [searchText, setSearchText] = useState(""); 
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
   useEffect(() => {
@@ -24,7 +20,9 @@ const Body = () => {
   }, []);
 
   async function getRestaurants() {
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.8466937&lng=80.94616599999999&page_type=DESKTOP_WEB_LISTING");
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.8466937&lng=80.94616599999999&page_type=DESKTOP_WEB_LISTING"
+    );
     const json = await data.json();
     console.log(json);
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
@@ -32,10 +30,13 @@ const Body = () => {
   }
   console.log(render);
 
-  //Conditional Rendering
-//if restaurant is empty => shimmer ui
-// if restaurant has data => actual data UI
-  return (allRestaurants.length === 0 ) ? <Shimmer /> : (
+  if (!allRestaurants) return null;
+
+  // if (filteredRestaurants?.length === 0)
+  //   return <h1>No Restaurants match your filter !!!</h1>;
+  return allRestaurants?.length === 0 ? (
+    <Shimmer />
+  ) : (
     <>
       <div className="search-container">
         <input
@@ -44,14 +45,12 @@ const Body = () => {
           placeholder="Search"
           value={searchText}
           onChange={(e) => {
-            setSearchText(e.target.value); // this will not work
+            setSearchText(e.target.value); 
           }}
         />
         <button
           className="search-btn"
           onClick={() => {
-            //need to filter the data
-            //update  the state- restaurants
             const data = filterData(searchText, allRestaurants);
             setFilteredRestaurants(data);
           }}
