@@ -5,7 +5,8 @@ class Profile extends React.Component {
         super(props);
         //state variables
         this.state = {
-            count:0
+            count:0,
+            count2:0,
         };
     }
 render(){

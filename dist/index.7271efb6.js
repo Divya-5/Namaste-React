@@ -34731,7 +34731,8 @@ class Profile extends (0, _reactDefault.default).Component {
         super(props);
         //state variables
         this.state = {
-            count: 0
+            count: 0,
+            count2: 0
         };
     }
     render() {
@@ -34743,7 +34744,7 @@ class Profile extends (0, _reactDefault.default).Component {
                     children: "Profile Component Class"
                 }, void 0, false, {
                     fileName: "src/components/ProfileClass.js",
-                    lineNumber: 16,
+                    lineNumber: 17,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -34753,7 +34754,7 @@ class Profile extends (0, _reactDefault.default).Component {
                     ]
                 }, void 0, true, {
                     fileName: "src/components/ProfileClass.js",
-                    lineNumber: 17,
+                    lineNumber: 18,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -34763,13 +34764,13 @@ class Profile extends (0, _reactDefault.default).Component {
                     ]
                 }, void 0, true, {
                     fileName: "src/components/ProfileClass.js",
-                    lineNumber: 18,
+                    lineNumber: 19,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/ProfileClass.js",
-            lineNumber: 15,
+            lineNumber: 16,
             columnNumber: 12
         }, this);
     }
@@ -34796,13 +34797,14 @@ var _s = $RefreshSig$();
 const Profile = (props)=>{
     _s();
     const [count] = (0, _react.useState)(0);
+    const [count2] = (0, _react.useState)(0);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: "Profile components"
             }, void 0, false, {
                 fileName: "src/components/Profile.js",
-                lineNumber: 5,
+                lineNumber: 6,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -34812,7 +34814,7 @@ const Profile = (props)=>{
                 ]
             }, void 0, true, {
                 fileName: "src/components/Profile.js",
-                lineNumber: 6,
+                lineNumber: 7,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -34822,13 +34824,13 @@ const Profile = (props)=>{
                 ]
             }, void 0, true, {
                 fileName: "src/components/Profile.js",
-                lineNumber: 7,
+                lineNumber: 8,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(Profile, "Y89bt/pi8lrdHE1hdS9fijgV/R0=");
+_s(Profile, "4ZlaPBnGe5r+P/lQPDLpjsYCBII=");
 _c = Profile;
 exports.default = Profile;
 var _c;
