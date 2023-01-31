@@ -34731,10 +34731,10 @@ class Profile extends (0, _reactDefault.default).Component {
         super(props);
         //state variables
         this.state = {
-            count: 0,
-            count2: 0
+            count: 0
         };
     }
+    componentDidMount() {}
     render() {
         //destructer
         const { count  } = this.state;
@@ -34766,6 +34766,21 @@ class Profile extends (0, _reactDefault.default).Component {
                     fileName: "src/components/ProfileClass.js",
                     lineNumber: 19,
                     columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    onClick: ()=>{
+                        //We donot mutate state directly
+                        //Never do this.state= something
+                        this.setState({
+                            count: 1,
+                            count2: 1
+                        });
+                    },
+                    children: "SetCount"
+                }, void 0, false, {
+                    fileName: "src/components/ProfileClass.js",
+                    lineNumber: 22,
+                    columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
@@ -34796,16 +34811,17 @@ var _react = require("react");
 var _s = $RefreshSig$();
 const Profile = (props)=>{
     _s();
-    const [count] = (0, _react.useState)(0);
-    const [count2] = (0, _react.useState)(0);
+    const [count, setCount] = (0, _react.useState)(0);
+    const [count2, setCount2] = (0, _react.useState)(0);
+    (0, _react.useEffect)(()=>{});
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: "Profile components"
             }, void 0, false, {
                 fileName: "src/components/Profile.js",
-                lineNumber: 6,
-                columnNumber: 9
+                lineNumber: 7,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 children: [
@@ -34814,8 +34830,8 @@ const Profile = (props)=>{
                 ]
             }, void 0, true, {
                 fileName: "src/components/Profile.js",
-                lineNumber: 7,
-                columnNumber: 9
+                lineNumber: 8,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                 children: [
@@ -34824,13 +34840,34 @@ const Profile = (props)=>{
                 ]
             }, void 0, true, {
                 fileName: "src/components/Profile.js",
-                lineNumber: 8,
-                columnNumber: 9
+                lineNumber: 9,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    "Count2:",
+                    count2
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Profile.js",
+                lineNumber: 10,
+                columnNumber: 11
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>{
+                    setCount(count + 1);
+                    setCount2(count2 + 1);
+                },
+                children: "Counter"
+            }, void 0, false, {
+                fileName: "src/components/Profile.js",
+                lineNumber: 11,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(Profile, "4ZlaPBnGe5r+P/lQPDLpjsYCBII=");
+_s(Profile, "XLCqO7oox7TD+QPZtG8o2jOFJvM=");
 _c = Profile;
 exports.default = Profile;
 var _c;
